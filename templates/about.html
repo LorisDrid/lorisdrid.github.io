@@ -1,0 +1,101 @@
+{% import "macros.html" as macros %}
+{% extends "index.html" %}
+{% block main %}
+{% for asset in page.assets %}
+{% if asset is ending_with("data.toml") %}
+{% set_global data = load_data(path=asset, format="toml") %}
+{% endif %}
+{% endfor %}
+
+<h1 class="mb-16">{{ page.title }}</h1>
+
+<h2>💻 Experience</h2>
+{% for experience in data.experience %}
+<div class="experience-card">
+  <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+    <h3 class="card-title">{{ experience.name }}</h3>
+    <span class="card-date">{{ experience.start_date }}{% if experience.end_date %} – {{ experience.end_date }}{% endif %}</span>
+  </div>
+
+  <p class="card-desc">{{ experience.desc }}</p>
+
+  {% if experience.tags %}
+  <div class="card-tags">
+    {% for tag in experience.tags %}
+    <span class="card-tag">{{ tag }}</span>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 1rem;">
+    <span class="card-location">{{ experience.location }}</span>
+    {% if experience.logo %}
+    <a href="{{ experience.links[0].url }}" target="_blank" rel="noopener">
+      <img src="{{ experience.logo }}" alt="{{ experience.name }} logo" class="card-logo" style="position: static;" />
+    </a>
+    {% endif %}
+  </div>
+</div>
+{% endfor %}
+
+<h2>🎓 Education</h2>
+{% for education in data.education %}
+<div class="experience-card">
+  <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+    <h3 class="card-title">{{ education.name }}</h3>
+    <span class="card-date">{{ education.start_date }}{% if education.end_date %} – {{ education.end_date }}{% endif %}</span>
+  </div>
+
+  <p class="card-desc">{{ education.desc }}</p>
+
+  {% if education.tags %}
+  <div class="card-tags">
+    {% for tag in education.tags %}
+    <span class="card-tag">{{ tag }}</span>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 1rem;">
+    <span class="card-location">{{ education.location }}</span>
+    {% if education.logo %}
+    <a href="{{ education.links[0].url }}" target="_blank" rel="noopener">
+      <img src="{{ education.logo }}" alt="{{ education.name }} logo" class="card-logo" style="position: static;" />
+    </a>
+    {% endif %}
+  </div>
+</div>
+{% endfor %}
+
+<h2>🛠 Skills</h2>
+<div class="not-prose mt-6 flex flex-col">
+  {% for group in data.skills %}
+  <div class="skills-category">
+    <h3>{{ group.title }}</h3>
+    <div class="skills-grid">
+      {% for skill in group.items %}
+        <a href="{{ skill.url }}" target="_blank" rel="noopener" class="skill-item">
+          {{ skill.name }}
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<h2>🌍 Languages</h2>
+<div class="not-prose mt-6 flex flex-wrap gap-4">
+  {% for lang in data.Languages %}
+  <div class="experience-card" style="text-align: center; flex: 1; min-width: 180px;">
+    {% if lang.flag %}
+    <div style="display: flex; justify-content: center; margin-bottom: 0.75rem;">
+      <img src="{{ lang.flag }}" alt="{{ lang.name }} flag" class="lang-flag" />
+    </div>
+    {% endif %}
+    <h3 class="card-title" style="font-size: 1.1rem;">{{ lang.name }}</h3>
+    <p class="card-desc" style="color: var(--text-secondary); font-size: 0.9rem; margin: 0.25rem 0 0 0;">{{ lang.level }}</p>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}

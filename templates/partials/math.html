@@ -1,0 +1,37 @@
+<link
+  rel="preload"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.css"
+  as="style"
+  onload="this.onload=null;this.rel='stylesheet'"
+  crossorigin="anonymous"
+/>
+<noscript>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.css"
+    crossorigin="anonymous"
+  />
+</noscript>
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.js"
+  crossorigin="anonymous"
+></script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16/dist/contrib/auto-render.min.js"
+  crossorigin="anonymous"
+></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+      ],
+      throwOnError: false,
+    });
+  });
+</script>

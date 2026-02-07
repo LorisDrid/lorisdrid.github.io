@@ -1,0 +1,12 @@
+{% import "macros.html" as macros %}
+{% extends "index.html" %}
+
+{% block main %}
+
+<h1 class="mb-16">{{ section.title }}</h1>
+
+{% set pages = section.pages %}
+
+{% include "partials/page_list.html" %}
+
+{% endblock main %}

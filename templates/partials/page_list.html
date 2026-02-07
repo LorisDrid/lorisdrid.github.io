@@ -1,0 +1,123 @@
+{% if pages is defined %}
+{% elif paginator is defined %}
+{% set pages = paginator.pages %}
+{% elif term is defined %}
+{% set pages = term.pages %}
+{% elif section is defined %}
+{% set pages = section.pages %}
+{% endif %}
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 items-stretch">
+
+  {# --- First loop: pinned projects --- #}
+  {% for page in pages %}
+    {% if page.extra.pinned %}
+    <section
+      class="card-hover block-bg relative rounded-lg p-4 lg:p-6 cursor-pointer h-full min-h-[300px] md:min-h-[350px] flex flex-col overflow-visible"
+    >
+      {% if page.extra.cover.image %}
+      <figure class="mt-0 mb-4 flex-shrink-0 relative">
+        <img
+          class="h-48 md:h-40 lg:h-48 w-full rounded-lg object-cover object-center transition-transform duration-200 hover:scale-[1.02]"
+          src="{{ get_url(path=page.extra.cover.image) }}"
+          alt="{{ page.extra.cover.alt | default(value='cover') }}"
+        />
+      </figure>
+      {% endif %}
+      
+  {% if page.extra.pinned %}
+  <span
+    class="absolute top-0 right-0 text-2xl z-50 pointer-events-none"
+    title="Pinned Project"
+    style="top: -18px; right: -18px; font-size: 1.8rem;"
+  >
+    📌
+  </span>
+  {% endif %}
+
+      <h3 class="my-0! pb-1 leading-tight! font-bold text-lg transition-colors duration-200 hover:text-[var(--hint-color)] flex-shrink-0">{{ page.title }}</h3>
+
+      <div class="not-prose my-2 flex-grow">
+        {% if page.description %}
+        <p class="text-sm md:text-base opacity-80 line-clamp-3">{{ page.description }}</p>
+        {% elif page.summary %}
+        <div class="text-sm md:text-base opacity-80 line-clamp-3">{{ page.summary | safe }}</div>
+        {% endif %}
+      </div>
+
+      <div class="mt-auto pt-2 flex-shrink-0">
+        {% include "partials/page_info.html" %}
+      </div>
+
+      <a class="absolute inset-0 text-[0px] z-10" href="{{ page.permalink }}">{{ page.title }}</a>
+    </section>
+    {% endif %}
+  {% endfor %}
+
+  {# --- Second loop: non-pinned projects --- #}
+  {% for page in pages %}
+    {% if not page.extra.pinned %}
+    <section
+      class="card-hover block-bg relative rounded-lg p-4 lg:p-6 cursor-pointer h-full min-h-[300px] md:min-h-[350px] flex flex-col"
+    >
+      {% if page.extra.cover.image %}
+      <figure class="mt-0 mb-4 flex-shrink-0 relative">
+        <img
+          class="h-48 md:h-40 lg:h-48 w-full rounded-lg object-cover object-center transition-transform duration-200 hover:scale-[1.02]"
+          src="{{ get_url(path=page.extra.cover.image) }}"
+          alt="{{ page.extra.cover.alt | default(value='cover') }}"
+        />
+      </figure>
+      {% endif %}
+
+      <h3 class="my-0! pb-1 leading-tight! font-bold text-lg transition-colors duration-200 hover:text-[var(--hint-color)] flex-shrink-0">{{ page.title }}</h3>
+
+      <div class="not-prose my-2 flex-grow">
+        {% if page.description %}
+        <p class="text-sm md:text-base opacity-80 line-clamp-3">{{ page.description }}</p>
+        {% elif page.summary %}
+        <div class="text-sm md:text-base opacity-80 line-clamp-3">{{ page.summary | safe }}</div>
+        {% endif %}
+      </div>
+
+      <div class="mt-auto pt-2 flex-shrink-0">
+        {% include "partials/page_info.html" %}
+      </div>
+
+      <a class="absolute inset-0 text-[0px] z-10" href="{{ page.permalink }}">{{ page.title }}</a>
+    </section>
+    {% endif %}
+  {% endfor %}
+
+</div>
+
+<script>
+document.querySelectorAll('.card-hover').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const rect = card.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
+    card.style.setProperty('--mouse-x', `${x}%`);
+    card.style.setProperty('--mouse-y', `${y}%`);
+  });
+});
+</script>
+
+{% if paginator is defined %}
+<nav class="not-prose mt-16 flex font-bold">
+  {% if paginator.previous %}
+  <a
+    class="rounded-full bg-black px-4 py-3 text-sm text-white no-underline duration-300 hover:shadow-lg hover:shadow-black/20 active:scale-95 dark:bg-white/80 dark:text-black dark:hover:shadow-white/20 transition-all"
+    href="{{ paginator.previous }}"
+    >← Prev Page</a
+  >
+  {% endif %}
+  {% if paginator.next %}
+  <a
+    class="ml-auto rounded-full bg-black px-4 py-3 text-sm text-white no-underline duration-300 hover:shadow-lg hover:shadow-black/20 active:scale-95 dark:bg-white/80 dark:text-black dark:hover:shadow-white/20 transition-all"
+    href="{{ paginator.next }}"
+    >Next Page →</a
+  >
+  {% endif %}
+</nav>
+{% endif %}

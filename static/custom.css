@@ -1,0 +1,293 @@
+/* ============================================
+   Loris Drid — Dark Pro Theme with Blue Accent
+   ============================================ */
+
+:root {
+  --accent: #4a90d9;
+  --accent-light: #6aabf0;
+  --accent-dim: rgba(74, 144, 217, 0.15);
+  --card-bg: #24243a;
+  --card-border: #333350;
+  --bg-page: #1a1a2c;
+  --text-primary: #e0e0e0;
+  --text-secondary: #a0a0b0;
+}
+
+/* --- Base --- */
+body {
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--text-primary);
+  background: var(--bg-page);
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: -0.025em;
+  color: #ffffff;
+}
+
+/* --- Links --- */
+a {
+  color: var(--accent);
+  transition: color 0.15s ease;
+}
+
+a:hover {
+  color: var(--accent-light);
+}
+
+/* --- Header --- */
+.header, header {
+  background: #141424 !important;
+  border-bottom: 2px solid var(--accent);
+}
+
+header .title-hover {
+  color: var(--accent);
+}
+
+/* --- Nav centered with title --- */
+header .primary-link {
+  color: var(--text-primary) !important;
+}
+
+header .primary-link:hover {
+  color: var(--accent) !important;
+}
+
+/* --- Profile card --- */
+.mb-12.flex.items-center {
+  padding: 2rem 1.5rem;
+  border-radius: 0.75rem;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.mb-12.flex.items-center h1 {
+  color: #ffffff;
+}
+
+.mb-12.flex.items-center .break-words {
+  color: var(--text-secondary);
+}
+
+/* --- Social icons --- */
+.icon-link {
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  filter: invert(0.7);
+}
+
+.icon-link:hover {
+  transform: scale(1.15);
+  filter: invert(0.9);
+}
+
+/* --- Experience / Education cards (about page) --- */
+.experience-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 0.75rem;
+  padding: 1.75rem;
+  margin-bottom: 1.25rem;
+  position: relative;
+}
+
+.experience-card .card-title {
+  color: var(--accent);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.experience-card .card-date {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  float: right;
+  margin-top: 0.15rem;
+}
+
+.experience-card .card-desc {
+  color: var(--text-primary);
+  margin: 0.75rem 0;
+  line-height: 1.7;
+}
+
+.experience-card .card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.experience-card .card-tag {
+  display: inline-block;
+  border-radius: 0.375rem;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-secondary);
+  border: 1px solid var(--card-border);
+}
+
+.experience-card .card-logo {
+  position: absolute;
+  bottom: 1.25rem;
+  right: 1.5rem;
+  max-height: 48px;
+  max-width: 120px;
+  object-fit: contain;
+}
+
+.experience-card .card-location {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+/* --- Skills section --- */
+.skills-category {
+  margin-bottom: 1.5rem;
+}
+
+.skills-category h3 {
+  color: var(--accent);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border-radius: 0.375rem;
+  padding: 0.3rem 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-secondary);
+  border: 1px solid var(--card-border);
+  transition: all 0.15s ease;
+}
+
+.skill-item:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* --- Language flags --- */
+.lang-flag {
+  width: 20px;
+  height: 14px;
+  border-radius: 2px;
+  object-fit: cover;
+}
+
+/* --- Tags in portfolio --- */
+a[href*="/tags/"] {
+  display: inline-block;
+  border-radius: 0.375rem;
+  padding: 0.2rem 0.7rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-secondary);
+  border: 1px solid var(--card-border);
+  transition: all 0.15s ease;
+}
+
+a[href*="/tags/"]:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-dim);
+}
+
+/* --- Block backgrounds --- */
+.block-bg {
+  background: var(--card-bg) !important;
+  border: 1px solid var(--card-border);
+  border-radius: 0.75rem;
+}
+
+.block-hover:hover {
+  background: rgba(74, 144, 217, 0.08) !important;
+}
+
+/* --- Footer --- */
+footer {
+  border-top: 1px solid var(--card-border);
+  color: var(--text-secondary);
+}
+
+/* --- Selection --- */
+::selection {
+  background: var(--accent);
+  color: white;
+}
+
+/* --- Prose --- */
+.prose {
+  color: var(--text-primary);
+}
+
+.prose h1, .prose h2, .prose h3, .prose h4 {
+  color: #ffffff;
+}
+
+.prose strong {
+  color: #ffffff;
+}
+
+.prose a {
+  color: var(--accent);
+}
+
+.prose a:hover {
+  color: var(--accent-light);
+}
+
+/* --- Code blocks --- */
+pre {
+  border-radius: 0.75rem;
+  border: 1px solid var(--card-border);
+  background: #16162a !important;
+}
+
+/* --- Slider --- */
+.slider:hover {
+  outline-color: var(--accent);
+}
+
+/* --- Scrollbar --- */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-page);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--card-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}

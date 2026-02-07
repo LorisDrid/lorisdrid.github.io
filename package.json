@@ -1,0 +1,15 @@
+{
+  "name": "lorisdrid-portfolio",
+  "version": "0.1.0",
+  "description": "Loris Drid's personal portfolio website",
+  "license": "MIT",
+  "scripts": {
+    "dev": "pnpm tailwindcss -i ./static/app.css -o ./static/main.css --watch",
+    "build": "pnpm tailwindcss -i ./static/app.css -o ./static/main.css"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.11",
+    "@tailwindcss/typography": "^0.5.16",
+    "tailwindcss": "^4.1.11"
+  }
+}

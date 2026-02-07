@@ -1,0 +1,171 @@
+<style>
+@keyframes color-shift {
+  0%, 100% {
+    color: #4a90d9;
+  }
+  50% {
+    color: #6aabf0;
+  }
+}
+
+.title-hover {
+  transition: transform 0.3s ease-in-out, color 0.5s ease-out;
+  text-shadow: 1px 1px 1px rgba(0, 17, 18, 0.5);
+}
+
+.title-hover:hover {
+  animation: color-shift 3s ease-in-out infinite;
+  transform: scale(1.05);
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: transform 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 6px;
+  bottom: 4px;
+  transition: 0.4s;
+  background-image: url('/icons/theme.svg');
+  background-repeat: no-repeat;
+  background-size: 200% 100%;
+  background-position: left center;
+  border-radius: 50%;
+}
+
+.slider:hover {
+  outline: #4a90d9 solid 2px;
+  transition: outline .1s;
+}
+
+input:checked + .slider {
+  background-color: var(--block-bg-dark);
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+  background-position: right center;
+  filter: invert(1);
+}
+</style>
+
+<header
+  class="{% if config.extra.style.header_blur %}blur-header{% else %}header{% endif %} fixed top-0 z-40 mx-auto min-h-[3.5rem] w-full"
+>
+  <div class="mx-auto w-full max-w-4xl p-3 flex items-center justify-center relative">
+
+      <!-- Center: Name + Nav -->
+      <div class="flex items-center gap-6">
+        <a style="display: block; margin-top: -6px;" class="title-hover text-2xl font-semibold" href="{{ get_url(path=``) }}">{{ config.title }}</a>
+        {% if config.extra.menu %}
+        <nav class="hidden lg:flex items-center">
+          <ul class="flex flex-row">
+            {% for menu in config.extra.menu %}
+            <li>
+              <a
+                class="primary-link block text-lg font-medium px-3 py-3"
+                href="{{ menu.url | replace(from=`$BASE_URL`, to=config.base_url) | safe }}"
+              >{{ menu.name }}</a>
+            </li>
+            {% endfor %}
+          </ul>
+        </nav>
+        {% endif %}
+      </div>
+
+      <!-- Right: mobile menu btn + toggle (absolute right) -->
+      <div style="position: fixed; right: 1.5rem; top: 0.75rem; z-index: 50;" class="flex items-center gap-3">
+        {% if config.extra.menu %}
+        <div class="flex relative justify-center gap-2.5 lg:hidden items-end">
+          <a class="text-1xl font-semibold">Menu</a>
+          <div
+            class="btn-menu flex relative justify-center flex-col z-50 gap-2.5 cursor-pointer h-8 w-8 shrink-0 items-center"
+            role="button"
+            aria-label="Menu"
+          ></div>
+        </div>
+        {% endif %}
+        <label class="switch btn-dark h-6 w-6" aria-label="Theme toggle">
+          <input type="checkbox" id="theme-toggle" />
+          <span class="slider round"></span>
+        </label>
+      </div>
+    </div>
+
+    <script>
+      const htmlClass = document.documentElement.classList;
+      const darkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+      const themeToggle = document.getElementById("theme-toggle");
+
+      const setDark = (isDark) => {
+        if (isDark) {
+          htmlClass.add("dark");
+          document.body.dispatchEvent(new CustomEvent("set-theme", { detail: "dark" }));
+        } else {
+          htmlClass.remove("dark");
+          document.body.dispatchEvent(new CustomEvent("set-theme", { detail: "light" }));
+        }
+        localStorage.setItem("dark", isDark);
+        themeToggle.checked = isDark;
+      };
+
+      setTimeout(() => htmlClass.remove("not-ready"), 10);
+      const stored = localStorage.getItem("dark");
+      const prefersDark = stored ? stored === "true" : darkScheme.matches;
+      setDark(prefersDark);
+
+      darkScheme.addEventListener("change", (e) => {
+        const stored = localStorage.getItem("dark");
+        if (stored === null) setDark(e.matches);
+      });
+
+      themeToggle.addEventListener("change", () => {
+        setDark(themeToggle.checked);
+      });
+
+      const btnMenu = document.querySelector(".btn-menu");
+      btnMenu?.addEventListener("click", () => htmlClass.toggle("open"));
+    </script>
+
+    <!-- Mobile nav (hidden by default, shown when .open is on html) -->
+    {% if config.extra.menu %}
+    <nav class="lg:hidden">
+      <ul class="nav-wrapper flex w-full flex-col py-2">
+        {% for menu in config.extra.menu %}
+        <li>
+          <a
+            class="primary-link block py-3 text-center text-lg font-medium"
+            href="{{ menu.url | replace(from=`$BASE_URL`, to=config.base_url) | safe }}"
+          >{{ menu.name }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </nav>
+    {% endif %}
+  </div>
+</header>
