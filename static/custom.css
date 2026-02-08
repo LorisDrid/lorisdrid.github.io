@@ -80,6 +80,13 @@ header .primary-link:hover {
   color: var(--text-secondary);
 }
 
+/* --- Avatar --- */
+.mb-12.flex.items-center img.rounded-full {
+  width: 128px;
+  height: 128px;
+  object-fit: cover;
+}
+
 /* --- Social icons --- */
 .icon-link {
   transition: opacity 0.15s ease, transform 0.15s ease;
