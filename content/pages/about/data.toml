@@ -2,44 +2,53 @@
 
 [[experience]]
 name = "UI Cloud Engineer Intern"
+name_fr = "Stage Ingénieur UI Cloud"
 desc = "Full-stack development (Java Spring Boot, SAP UI5) in agile teams. Designed multi-tenant cloud features for enterprise BPMN workflows (1,000+ tenants). Created AI-powered proof of concept for BPMN editor with 50+ Figma screens."
+desc_fr = "Développement full-stack (Java Spring Boot, SAP UI5) en équipes agiles. Conception de fonctionnalités cloud multi-tenant pour workflows BPMN (1 000+ tenants). Création d'un proof of concept IA pour un éditeur BPMN avec 50+ écrans Figma."
 start_date = "Mar 2025"
 end_date = "Sep 2025"
 location = "SAP Labs | Mougins, France"
 tags = ["Java Spring Boot", "SAP UI5", "BPMN", "Figma", "Agile"]
-# logo = "/images/sap-logo.png"
+logo = "/images/sap-logo.jpg"
 links = [{ name = "SAP", url = "https://www.sap.com" }]
 
 [[experience]]
 name = "Full-Stack Developer Intern"
+name_fr = "Stage Développeur Full-Stack"
 desc = "End-to-end development of eco-responsible e-commerce platform. MongoDB integration and CO2 emissions calculation API. Eco-labeled product catalog with optimized UI, iterating based on user feedback."
+desc_fr = "Développement complet d'une plateforme e-commerce éco-responsable. Intégration MongoDB et API de calcul d'émissions CO2. Catalogue de produits éco-labellisés avec UI optimisée, itérations basées sur les retours utilisateurs."
 start_date = "May 2024"
 end_date = "Aug 2024"
 location = "DNIIT | Da Nang, Vietnam"
+location_fr = "DNIIT | Da Nang, Viêtnam"
 tags = ["MongoDB", "REST API", "Node.js", "UX Design"]
-# logo = "/images/dniit-logo.png"
+logo = "/images/dniit-logo.png"
 links = [{ name = "DNIIT", url = "https://dniit.com" }]
 
 # Education
 
 [[education]]
 name = "Engineer's Degree in Computer Science"
+name_fr = "Diplôme d'Ingénieur en Informatique"
 desc = "Specialization in Human-Computer Interaction (HCI) and Software Engineering."
+desc_fr = "Spécialisation en Interaction Homme-Machine (IHM) et Génie Logiciel."
 start_date = "Sep 2022"
 end_date = "Jun 2025"
 location = "Polytech Nice Sophia | Nice, France"
 tags = ["HCI", "Software Engineering", "Agile", "UX Research"]
-# logo = "/images/polytech-logo.png"
+logo = "/images/polytech-logo.png"
 links = [{ name = "Polytech Nice Sophia", url = "https://polytech.univ-cotedazur.fr" }]
 
 [[education]]
 name = "Preparatory Classes - Mathematics & Physics"
+name_fr = "Classes Préparatoires - Mathématiques & Physique"
 desc = "Intensive two-year program in mathematics and physics preparing for engineering school entrance exams."
+desc_fr = "Programme intensif de deux ans en mathématiques et physique préparant aux concours d'entrée en école d'ingénieurs."
 start_date = "Sep 2020"
 end_date = "Jun 2022"
 location = "Lycée Claude Fauriel | Saint-Étienne, France"
 tags = ["Mathematics", "Physics", "Algorithms"]
-# logo = "/images/fauriel-logo.png"
+logo = "/images/fauriel-logo.jpg"
 links = [{ name = "Lycée Claude Fauriel", url = "https://fauriel.fr" }]
 
 # Skills (max 3 categories)
@@ -79,10 +88,14 @@ items = [
 
 [[Languages]]
 name = "French"
+name_fr = "Français"
 level = "Native"
+level_fr = "Natif"
 flag = "https://flagcdn.com/w40/fr.png"
 
 [[Languages]]
 name = "English"
+name_fr = "Anglais"
 level = "C1 (TOEIC 940)"
+level_fr = "C1 (TOEIC 940)"
 flag = "https://flagcdn.com/w40/gb.png"

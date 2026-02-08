@@ -7,17 +7,17 @@
 {% endif %}
 {% endfor %}
 
-<h1 class="mb-16">{{ page.title }}</h1>
+<h1 class="mb-16" data-i18n-en="About Me" data-i18n-fr="À propos" data-i18n-switch>{{ page.title }}</h1>
 
-<h2>💻 Experience</h2>
+<h2 data-i18n="about.experience">💻 Experience</h2>
 {% for experience in data.experience %}
 <div class="experience-card">
-  <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-    <h3 class="card-title">{{ experience.name }}</h3>
+  <div style="display: flex; justify-content: space-between; align-items: center;">
+    <h3 class="card-title" data-i18n-en="{{ experience.name }}" data-i18n-fr="{{ experience.name_fr | default(value=experience.name) }}" data-i18n-switch>{{ experience.name }}</h3>
     <span class="card-date">{{ experience.start_date }}{% if experience.end_date %} – {{ experience.end_date }}{% endif %}</span>
   </div>
 
-  <p class="card-desc">{{ experience.desc }}</p>
+  <p class="card-desc" data-i18n-en="{{ experience.desc }}" data-i18n-fr="{{ experience.desc_fr | default(value=experience.desc) }}" data-i18n-switch>{{ experience.desc }}</p>
 
   {% if experience.tags %}
   <div class="card-tags">
@@ -28,7 +28,7 @@
   {% endif %}
 
   <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 1rem;">
-    <span class="card-location">{{ experience.location }}</span>
+    <span class="card-location" data-i18n-en="{{ experience.location }}" data-i18n-fr="{{ experience.location_fr | default(value=experience.location) }}" data-i18n-switch>{{ experience.location }}</span>
     {% if experience.logo %}
     <a href="{{ experience.links[0].url }}" target="_blank" rel="noopener">
       <img src="{{ experience.logo }}" alt="{{ experience.name }} logo" class="card-logo" style="position: static;" />
@@ -38,15 +38,15 @@
 </div>
 {% endfor %}
 
-<h2>🎓 Education</h2>
+<h2 data-i18n="about.education">🎓 Education</h2>
 {% for education in data.education %}
 <div class="experience-card">
-  <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-    <h3 class="card-title">{{ education.name }}</h3>
+  <div style="display: flex; justify-content: space-between; align-items: center;">
+    <h3 class="card-title" data-i18n-en="{{ education.name }}" data-i18n-fr="{{ education.name_fr | default(value=education.name) }}" data-i18n-switch>{{ education.name }}</h3>
     <span class="card-date">{{ education.start_date }}{% if education.end_date %} – {{ education.end_date }}{% endif %}</span>
   </div>
 
-  <p class="card-desc">{{ education.desc }}</p>
+  <p class="card-desc" data-i18n-en="{{ education.desc }}" data-i18n-fr="{{ education.desc_fr | default(value=education.desc) }}" data-i18n-switch>{{ education.desc }}</p>
 
   {% if education.tags %}
   <div class="card-tags">
@@ -67,7 +67,7 @@
 </div>
 {% endfor %}
 
-<h2>🛠 Skills</h2>
+<h2 data-i18n="about.skills">🛠 Skills</h2>
 <div class="not-prose mt-6 flex flex-col">
   {% for group in data.skills %}
   <div class="skills-category">
@@ -83,7 +83,7 @@
   {% endfor %}
 </div>
 
-<h2>🌍 Languages</h2>
+<h2 data-i18n="about.languages">🌍 Languages</h2>
 <div class="not-prose mt-6 flex flex-wrap gap-4">
   {% for lang in data.Languages %}
   <div class="experience-card" style="text-align: center; flex: 1; min-width: 180px;">
@@ -92,8 +92,8 @@
       <img src="{{ lang.flag }}" alt="{{ lang.name }} flag" class="lang-flag" />
     </div>
     {% endif %}
-    <h3 class="card-title" style="font-size: 1.1rem;">{{ lang.name }}</h3>
-    <p class="card-desc" style="color: var(--text-secondary); font-size: 0.9rem; margin: 0.25rem 0 0 0;">{{ lang.level }}</p>
+    <h3 class="card-title" style="font-size: 1.1rem;" data-i18n-en="{{ lang.name }}" data-i18n-fr="{{ lang.name_fr | default(value=lang.name) }}" data-i18n-switch>{{ lang.name }}</h3>
+    <p class="card-desc" style="color: var(--text-secondary); font-size: 0.9rem; margin: 0.25rem 0 0 0;" data-i18n-en="{{ lang.level }}" data-i18n-fr="{{ lang.level_fr | default(value=lang.level) }}" data-i18n-switch>{{ lang.level }}</p>
   </div>
   {% endfor %}
 </div>

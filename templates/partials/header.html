@@ -77,19 +77,23 @@ input:checked + .slider:before {
 <header
   class="{% if config.extra.style.header_blur %}blur-header{% else %}header{% endif %} fixed top-0 z-40 mx-auto min-h-[3.5rem] w-full"
 >
-  <div class="mx-auto w-full max-w-4xl p-3 flex items-center justify-center relative">
+  <div class="mx-auto w-full max-w-5xl p-3 flex items-center justify-center relative">
 
       <!-- Center: Name + Nav -->
-      <div class="flex items-center gap-6">
-        <a style="display: block; margin-top: -6px;" class="title-hover text-2xl font-semibold" href="{{ get_url(path=``) }}">{{ config.title }}</a>
+      <div class="flex items-center gap-10">
+        <a style="display: block; margin-top: -6px; margin-right: 2rem;" class="title-hover text-2xl font-semibold" href="{{ get_url(path=``) }}">{{ config.title }}</a>
         {% if config.extra.menu %}
         <nav class="hidden lg:flex items-center">
           <ul class="flex flex-row">
             {% for menu in config.extra.menu %}
+            {% set i18n_key = "" %}
+            {% if loop.index == 1 %}{% set i18n_key = "nav.projects" %}{% endif %}
+            {% if loop.index == 2 %}{% set i18n_key = "nav.about" %}{% endif %}
             <li>
               <a
-                class="primary-link block text-lg font-medium px-3 py-3"
+                class="primary-link block text-lg font-medium px-5 py-3"
                 href="{{ menu.url | replace(from=`$BASE_URL`, to=config.base_url) | safe }}"
+                {% if i18n_key %}data-i18n="{{ i18n_key }}"{% endif %}
               >{{ menu.name }}</a>
             </li>
             {% endfor %}
@@ -110,6 +114,14 @@ input:checked + .slider:before {
           ></div>
         </div>
         {% endif %}
+        <div style="display: flex; gap: 4px; margin-right: 12px;" id="lang-switcher">
+          <button onclick="switchLang('en')" id="lang-en" style="cursor: pointer; border: 2px solid transparent; border-radius: 3px; padding: 1px; background: none; transition: border-color 0.15s ease;">
+            <img src="https://flagcdn.com/w40/gb.png" alt="English" style="width: 28px; height: 18px; display: block; border-radius: 2px;" />
+          </button>
+          <button onclick="switchLang('fr')" id="lang-fr" style="cursor: pointer; border: 2px solid transparent; border-radius: 3px; padding: 1px; background: none; transition: border-color 0.15s ease;">
+            <img src="https://flagcdn.com/w40/fr.png" alt="Français" style="width: 28px; height: 18px; display: block; border-radius: 2px;" />
+          </button>
+        </div>
         <label class="switch btn-dark h-6 w-6" aria-label="Theme toggle">
           <input type="checkbox" id="theme-toggle" />
           <span class="slider round"></span>

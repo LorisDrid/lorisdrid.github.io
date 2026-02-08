@@ -44,7 +44,7 @@ header_blur = false
 # The profile on home page.
 [extra.profile]
 name = "Hi! I'm Loris"
-bio = "Software Engineer spécialisé UI/UX 🚀 Diplômé Polytech Nice Sophia"
+bio = "Software Engineer · UI/UX Enthusiast 🚀 Polytech Nice Sophia Graduate. Passionate about crafting intuitive user experiences and building full-stack applications."
 # The URL of avatar — TODO: remplace par ton avatar
 avatar_url = "icons/avatar.png"
 # Invert color in dark mode.

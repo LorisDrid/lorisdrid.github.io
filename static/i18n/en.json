@@ -1,0 +1,36 @@
+{
+  "profile": {
+    "name": "Hi! I'm Loris",
+    "bio": "Software Engineer · UI/UX Enthusiast 🚀 Polytech Nice Sophia Graduate. Passionate about crafting intuitive user experiences and building full-stack applications."
+  },
+  "nav": {
+    "projects": "📂 Projects",
+    "about": "ℹ️ About Me"
+  },
+  "home": {
+    "what_i_do": "🚀 What I Do",
+    "uiux_title": "UI/UX Design",
+    "uiux_desc": "Crafting intuitive interfaces with Figma, prototyping and user research.",
+    "fullstack_title": "Full-Stack Dev",
+    "fullstack_desc": "Building web apps with React, Spring Boot, Node.js and modern frameworks.",
+    "data_title": "Data & Visualization",
+    "data_desc": "Turning complex data into clear, interactive visualizations with D3.js and Python.",
+    "download_cv": "📄 Download my CV"
+  },
+  "about": {
+    "experience": "💻 Experience",
+    "education": "🎓 Education",
+    "skills": "🛠️ Skills",
+    "languages": "🌍 Languages",
+    "native": "Native",
+    "fluent": "Fluent"
+  },
+  "portfolio": {
+    "preview": "📸 Preview",
+    "technologies": "🛠️ Technologies",
+    "github_repo": "💻 GitHub Repository"
+  },
+  "footer": {
+    "powered_by": "Powered by"
+  }
+}

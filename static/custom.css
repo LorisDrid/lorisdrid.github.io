@@ -112,14 +112,18 @@ header .primary-link:hover {
   color: var(--accent);
   font-size: 1.25rem;
   font-weight: 600;
-  margin-bottom: 0.25rem;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1.4;
 }
 
 .experience-card .card-date {
   color: var(--text-secondary);
   font-size: 0.9rem;
-  float: right;
-  margin-top: 0.15rem;
+  white-space: nowrap;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1.4;
 }
 
 .experience-card .card-desc {
@@ -200,10 +204,15 @@ header .primary-link:hover {
 
 /* --- Language flags --- */
 .lang-flag {
-  width: 20px;
-  height: 14px;
-  border-radius: 2px;
+  width: 36px;
+  height: 24px;
+  border-radius: 3px;
   object-fit: cover;
+}
+
+/* --- Lang switcher flags --- */
+#lang-switcher button:hover {
+  opacity: 0.8 !important;
 }
 
 /* --- Tags in portfolio --- */
