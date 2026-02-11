@@ -6,7 +6,7 @@
     {% include "partials/page_info.html" %}
   </header>
 
-  {% if page.extra.cover.image %}
+  {% if page.extra.cover.image and page.extra.cover.show_in_page | default(value=true) %}
   <figure class="mt-0 mb-12">
     <img
       class="h-auto w-full rounded-lg"

@@ -102,9 +102,11 @@ header .primary-link:hover {
 
 /* --- Avatar --- */
 .mb-12.flex.items-center img.rounded-full {
-  width: 128px;
-  height: 128px;
+  width: 160px;
+  height: 160px;
+  min-width: 160px;
   object-fit: cover;
+  object-position: center top;
 }
 
 /* --- Social icons --- */
