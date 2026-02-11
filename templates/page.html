@@ -2,7 +2,7 @@
 {% block main %}
 <article>
   <header class="mb-8">
-    <h1 class="my-0! pb-2.5">{{ page.title }}</h1>
+    <h1 class="my-0! pb-2.5" data-i18n-switch data-i18n-en="{{ page.title }}" data-i18n-fr="{{ page.extra.title_fr | default(value=page.title) }}">{{ page.title }}</h1>
     {% include "partials/page_info.html" %}
   </header>
 
@@ -16,7 +16,42 @@
   </figure>
   {% endif %}
 
+  {# --- If structured i18n content exists, render it; otherwise fallback to markdown body --- #}
+  {% if page.extra.body_en %}
+  <section>
+    <p data-i18n-switch data-i18n-en="{{ page.extra.body_en }}" data-i18n-fr="{{ page.extra.body_fr | default(value=page.extra.body_en) }}">{{ page.extra.body_en }}</p>
+
+    {% if page.extra.cover.image %}
+    <figure class="mt-6 mb-8">
+      <img
+        class="h-auto w-full rounded-lg"
+        src="{{ get_url(path=page.extra.cover.image) }}"
+        alt="{{ page.extra.cover.alt | default(value='cover') }}"
+      />
+    </figure>
+    {% endif %}
+
+    {% if page.extra.github_url %}
+    <h2 data-i18n="portfolio.github_repo">💻 GitHub Repository</h2>
+    <a href="{{ page.extra.github_url }}" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 0.5rem; background: var(--card-bg, #24243a); border: 1px solid var(--card-border, #333350); padding: 0.5rem 1rem; border-radius: 0.5rem; text-decoration: none; font-weight: 500; transition: border-color 0.15s ease;">{{ page.extra.github_label | default(value="GitHub") }}</a>
+    {% endif %}
+
+    {% if page.extra.techs %}
+    <h2 data-i18n="portfolio.technologies">🛠️ Technologies</h2>
+    <ul data-i18n-techs>
+      {% for tech in page.extra.techs %}
+      <li data-i18n-switch
+          data-i18n-en="{{ tech }}"
+          data-i18n-fr="{% if page.extra.techs_fr %}{{ page.extra.techs_fr[loop.index0] | default(value=tech) }}{% else %}{{ tech }}{% endif %}">
+        {{ tech }}
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </section>
+  {% else %}
   <section>{{ page.content | safe }}</section>
+  {% endif %}
 
   <hr />
 

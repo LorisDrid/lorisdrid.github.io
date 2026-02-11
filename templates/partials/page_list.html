@@ -35,11 +35,11 @@
   </span>
   {% endif %}
 
-      <h3 class="my-0! pb-1 leading-tight! font-bold text-lg transition-colors duration-200 hover:text-[var(--hint-color)] flex-shrink-0">{{ page.title }}</h3>
+      <h3 class="my-0! pb-1 leading-tight! font-bold text-lg transition-colors duration-200 hover:text-[var(--hint-color)] flex-shrink-0" data-i18n-switch data-i18n-en="{{ page.title }}" data-i18n-fr="{{ page.extra.title_fr | default(value=page.title) }}">{{ page.title }}</h3>
 
       <div class="not-prose my-2 flex-grow">
         {% if page.description %}
-        <p class="text-sm md:text-base opacity-80 line-clamp-3">{{ page.description }}</p>
+        <p class="text-sm md:text-base opacity-80 line-clamp-3" data-i18n-switch data-i18n-en="{{ page.description }}" data-i18n-fr="{{ page.extra.description_fr | default(value=page.description) }}">{{ page.description }}</p>
         {% elif page.summary %}
         <div class="text-sm md:text-base opacity-80 line-clamp-3">{{ page.summary | safe }}</div>
         {% endif %}
@@ -70,11 +70,11 @@
       </figure>
       {% endif %}
 
-      <h3 class="my-0! pb-1 leading-tight! font-bold text-lg transition-colors duration-200 hover:text-[var(--hint-color)] flex-shrink-0">{{ page.title }}</h3>
+      <h3 class="my-0! pb-1 leading-tight! font-bold text-lg transition-colors duration-200 hover:text-[var(--hint-color)] flex-shrink-0" data-i18n-switch data-i18n-en="{{ page.title }}" data-i18n-fr="{{ page.extra.title_fr | default(value=page.title) }}">{{ page.title }}</h3>
 
       <div class="not-prose my-2 flex-grow">
         {% if page.description %}
-        <p class="text-sm md:text-base opacity-80 line-clamp-3">{{ page.description }}</p>
+        <p class="text-sm md:text-base opacity-80 line-clamp-3" data-i18n-switch data-i18n-en="{{ page.description }}" data-i18n-fr="{{ page.extra.description_fr | default(value=page.description) }}">{{ page.description }}</p>
         {% elif page.summary %}
         <div class="text-sm md:text-base opacity-80 line-clamp-3">{{ page.summary | safe }}</div>
         {% endif %}

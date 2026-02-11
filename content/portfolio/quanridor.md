@@ -6,25 +6,16 @@ description = "A multiplayer adaptation of Quoridor with fog of war, bots, and o
 tags = ["JavaScript", "HTML/CSS", "Multiplayer", "Game", "Academic"]
 [extra]
 category = "Projects"
+title_fr = "♟️ Quanridor — Jeu de plateau multijoueur"
+description_fr = "Une adaptation multijoueur de Quoridor avec brouillard de guerre, bots et support en ligne."
+github_url = "https://github.com/LorisDrid/Quanridor"
+github_label = "GitHub — LorisDrid/Quanridor"
+body_en = "♟️ **Quanridor** is a multiplayer adaptation of the classic Quoridor board game, built with pure HTML, CSS, and JavaScript. It features a unique fog of war mechanic, AI opponents, local and online multiplayer, chat, leaderboards, and mobile support."
+body_fr = "♟️ **Quanridor** est une adaptation multijoueur du jeu de plateau classique Quoridor, développée en HTML, CSS et JavaScript pur. Le jeu propose un mécanisme de brouillard de guerre unique, des adversaires IA, un mode multijoueur local et en ligne, un chat, des classements et un support mobile."
+techs = ["JavaScript / HTML / CSS — pure vanilla, no frameworks", "Node.js backend with JWT authentication", "WebSocket for real-time multiplayer", "Responsive design for mobile compatibility"]
+techs_fr = ["JavaScript / HTML / CSS — vanilla, sans frameworks", "Backend Node.js avec authentification JWT", "WebSocket pour le multijoueur en temps réel", "Design responsive pour la compatibilité mobile"]
 [extra.cover]
 image = "images/quanridor-preview.png"
 alt = "Quanridor Preview"
 show_in_page = false
 +++
-
-![Quanridor Title](/images/quanridor-title.png)
-
-♟️ **Quanridor** is a multiplayer adaptation of the classic Quoridor board game, built with pure HTML, CSS, and JavaScript. It features a unique fog of war mechanic, AI opponents, local and online multiplayer, chat, leaderboards, and mobile support.
-
-![Quanridor Gameplay](/images/quanridor-preview.png)
-
-💻 **GitHub Repository**
-
-<a href="https://github.com/LorisDrid/Quanridor" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 0.5rem; background: var(--card-bg, #24243a); border: 1px solid var(--card-border, #333350); padding: 0.5rem 1rem; border-radius: 0.5rem; text-decoration: none; font-weight: 500; transition: border-color 0.15s ease;">GitHub — LorisDrid/Quanridor</a>
-
-## 🛠️ Technologies
-
-- **JavaScript** / **HTML** / **CSS** — pure vanilla, no frameworks
-- **Node.js** backend with JWT authentication
-- **WebSocket** for real-time multiplayer
-- **Responsive design** for mobile compatibility

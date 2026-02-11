@@ -3,7 +3,7 @@
 
 {% block main %}
 
-<h1 class="mb-16">{{ section.title }}</h1>
+<h1 class="mb-16" data-i18n-switch data-i18n-en="Portfolio" data-i18n-fr="Projets">{{ section.title }}</h1>
 
 {% set pages = section.pages %}
 {% include "partials/page_list.html" %}
