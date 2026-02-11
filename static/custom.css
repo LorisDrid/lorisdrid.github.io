@@ -1,16 +1,37 @@
 /* ============================================
-   Loris Drid — Dark Pro Theme with Blue Accent
+   Loris Drid — Pro Theme with Blue Accent
+   Light & Dark mode support
    ============================================ */
 
 :root {
   --accent: #4a90d9;
   --accent-light: #6aabf0;
   --accent-dim: rgba(74, 144, 217, 0.15);
+
+  /* Light mode defaults */
+  --card-bg: #f0f0f5;
+  --card-border: #d0d0dd;
+  --bg-page: #e8e8f0;
+  --text-primary: #2a2a3a;
+  --text-secondary: #5a5a70;
+  --heading-color: #1a1a2c;
+  --header-bg: #dcdce8;
+  --code-bg: #e4e4f0;
+  --tag-bg: rgba(0, 0, 0, 0.05);
+  --icon-invert: 0.3;
+}
+
+.dark {
   --card-bg: #24243a;
   --card-border: #333350;
   --bg-page: #1a1a2c;
   --text-primary: #e0e0e0;
   --text-secondary: #a0a0b0;
+  --heading-color: #ffffff;
+  --header-bg: #141424;
+  --code-bg: #16162a;
+  --tag-bg: rgba(255, 255, 255, 0.06);
+  --icon-invert: 0.7;
 }
 
 /* --- Base --- */
@@ -25,13 +46,12 @@ body {
 
 html {
   scroll-behavior: smooth;
-  color-scheme: dark;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
   letter-spacing: -0.025em;
-  color: #ffffff;
+  color: var(--heading-color);
 }
 
 /* --- Links --- */
@@ -46,7 +66,7 @@ a:hover {
 
 /* --- Header --- */
 .header, header {
-  background: #141424 !important;
+  background: var(--header-bg) !important;
   border-bottom: 2px solid var(--accent);
 }
 
@@ -69,11 +89,11 @@ header .primary-link:hover {
   border-radius: 0.75rem;
   background: var(--card-bg);
   border: 1px solid var(--card-border);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .mb-12.flex.items-center h1 {
-  color: #ffffff;
+  color: var(--heading-color);
 }
 
 .mb-12.flex.items-center .break-words {
@@ -90,12 +110,12 @@ header .primary-link:hover {
 /* --- Social icons --- */
 .icon-link {
   transition: opacity 0.15s ease, transform 0.15s ease;
-  filter: invert(0.7);
+  filter: invert(var(--icon-invert));
 }
 
 .icon-link:hover {
   transform: scale(1.15);
-  filter: invert(0.9);
+  filter: invert(calc(var(--icon-invert) + 0.2));
 }
 
 /* --- Experience / Education cards (about page) --- */
@@ -145,7 +165,7 @@ header .primary-link:hover {
   padding: 0.25rem 0.75rem;
   font-size: 0.8rem;
   font-weight: 500;
-  background: rgba(255, 255, 255, 0.06);
+  background: var(--tag-bg);
   color: var(--text-secondary);
   border: 1px solid var(--card-border);
 }
@@ -191,7 +211,7 @@ header .primary-link:hover {
   padding: 0.3rem 0.75rem;
   font-size: 0.85rem;
   font-weight: 500;
-  background: rgba(255, 255, 255, 0.06);
+  background: var(--tag-bg);
   color: var(--text-secondary);
   border: 1px solid var(--card-border);
   transition: all 0.15s ease;
@@ -222,7 +242,7 @@ a[href*="/tags/"] {
   padding: 0.2rem 0.7rem;
   font-size: 0.8rem;
   font-weight: 500;
-  background: rgba(255, 255, 255, 0.06);
+  background: var(--tag-bg);
   color: var(--text-secondary);
   border: 1px solid var(--card-border);
   transition: all 0.15s ease;
@@ -263,11 +283,11 @@ footer {
 }
 
 .prose h1, .prose h2, .prose h3, .prose h4 {
-  color: #ffffff;
+  color: var(--heading-color);
 }
 
 .prose strong {
-  color: #ffffff;
+  color: var(--heading-color);
 }
 
 .prose a {
@@ -282,7 +302,7 @@ footer {
 pre {
   border-radius: 0.75rem;
   border: 1px solid var(--card-border);
-  background: #16162a !important;
+  background: var(--code-bg) !important;
 }
 
 /* --- Slider --- */

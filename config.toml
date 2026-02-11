@@ -1,5 +1,5 @@
 # The base URL of the site; the only required configuration variable.
-base_url = "https://lorisdrid.github.io"
+base_url = "https://lorisdrid.fr"
 
 # The site title and description; used in feeds by default.
 title = "Loris Drid"
@@ -35,9 +35,9 @@ comment = false
 [extra.style]
 # Custom colors - Dark pro theme with blue accent
 # Cards are lighter (#2a2a3e), background is slightly darker (#1e1e30)
-bg_color = "#1a1a2c"
+bg_color = "#e8e8f0"
 bg_dark_color = "#1a1a2c"
-header_color = "#141424"
+header_color = "#dcdce8"
 header_dark_color = "#141424"
 header_blur = false
 
