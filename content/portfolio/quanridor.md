@@ -20,7 +20,7 @@ show_in_page = false
 
 💻 **GitHub Repository**
 
-<a href="https://github.com/marcpinet/quanridor" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 0.5rem; background: var(--card-bg, #24243a); border: 1px solid var(--card-border, #333350); padding: 0.5rem 1rem; border-radius: 0.5rem; text-decoration: none; font-weight: 500; transition: border-color 0.15s ease;">GitHub — marcpinet/quanridor</a>
+<a href="https://github.com/LorisDrid/Quanridor" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 0.5rem; background: var(--card-bg, #24243a); border: 1px solid var(--card-border, #333350); padding: 0.5rem 1rem; border-radius: 0.5rem; text-decoration: none; font-weight: 500; transition: border-color 0.15s ease;">GitHub — LorisDrid/Quanridor</a>
 
 ## 🛠️ Technologies
 
