@@ -21,12 +21,12 @@
   <section>
     <p data-i18n-switch data-i18n-en="{{ page.extra.body_en }}" data-i18n-fr="{{ page.extra.body_fr | default(value=page.extra.body_en) }}">{{ page.extra.body_en }}</p>
 
-    {% if page.extra.cover.image %}
+    {% if page.extra.body_image %}
     <figure class="mt-6 mb-8">
       <img
         class="h-auto w-full rounded-lg"
-        src="{{ get_url(path=page.extra.cover.image) }}"
-        alt="{{ page.extra.cover.alt | default(value='cover') }}"
+        src="{{ get_url(path=page.extra.body_image) }}"
+        alt="{{ page.extra.body_image_alt | default(value='') }}"
       />
     </figure>
     {% endif %}

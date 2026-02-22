@@ -15,11 +15,11 @@
     <section
       class="card-hover block-bg relative rounded-lg p-4 lg:p-6 cursor-pointer h-full min-h-[300px] md:min-h-[350px] flex flex-col overflow-visible"
     >
-      {% if page.extra.cover.image %}
+      {% if page.extra.thumbnail or page.extra.cover.image %}
       <figure class="mt-0 mb-4 flex-shrink-0 relative">
         <img
           class="h-48 md:h-40 lg:h-48 w-full rounded-lg object-cover object-center transition-transform duration-200 hover:scale-[1.02]"
-          src="{{ get_url(path=page.extra.cover.image) }}"
+          src="{{ get_url(path=page.extra.thumbnail | default(value=page.extra.cover.image)) }}"
           alt="{{ page.extra.cover.alt | default(value='cover') }}"
         />
       </figure>
@@ -60,11 +60,11 @@
     <section
       class="card-hover block-bg relative rounded-lg p-4 lg:p-6 cursor-pointer h-full min-h-[300px] md:min-h-[350px] flex flex-col"
     >
-      {% if page.extra.cover.image %}
+      {% if page.extra.thumbnail or page.extra.cover.image %}
       <figure class="mt-0 mb-4 flex-shrink-0 relative">
         <img
           class="h-48 md:h-40 lg:h-48 w-full rounded-lg object-cover object-center transition-transform duration-200 hover:scale-[1.02]"
-          src="{{ get_url(path=page.extra.cover.image) }}"
+          src="{{ get_url(path=page.extra.thumbnail | default(value=page.extra.cover.image)) }}"
           alt="{{ page.extra.cover.alt | default(value='cover') }}"
         />
       </figure>
