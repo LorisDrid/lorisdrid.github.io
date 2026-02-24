@@ -1,0 +1,572 @@
+<!doctype html>
+<html class="not-ready lg:text-base" lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <title>
+    About Me - Loris Drid
+  </title>
+
+  <meta name="theme-color" />
+
+  
+    
+    
+    
+      
+    
+    <meta name="description" content="About Me" />
+    <meta name="author" content="Loris Drid" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="About Me" />
+    <meta property="og:site_name" content="Loris Drid" />
+    <meta property="og:description" content="About Me" />
+    <meta property="og:url" content="https:&#x2F;&#x2F;lorisdrid.fr&#x2F;about&#x2F;" />
+    
+    
+  
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="preload" as="style" href="https://lorisdrid.fr/main.css" />
+  
+  <link rel="preload" as="image" href="https://lorisdrid.fr/icons/avatar.webp" type="image/webp" imagesrcset="https://lorisdrid.fr/icons/avatar.webp" />
+  <link rel="preload" as="image" href="https://lorisdrid.fr/icons/theme.svg" />
+
+  <link rel="stylesheet" href="https://lorisdrid.fr/main.css" />
+  <link rel="stylesheet" href="https://lorisdrid.fr/custom.css" />
+
+  <style>
+    :root {
+      --bg: #e8e8f0;
+      --bg-dark: #1a1a2c;
+      --header: #dcdce8;
+      --header-dark: #141424;
+    }
+  </style>
+
+  
+
+  
+
+  
+
+  <link rel="icon" href="https://lorisdrid.fr/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://lorisdrid.fr/apple-touch-icon.png" />
+
+  
+    
+      <link rel="alternate" type="application/atom+xml" title="Atom" href="https://lorisdrid.fr/atom.xml" />
+    
+    
+  
+
+  <link rel="canonical" href="https:&#x2F;&#x2F;lorisdrid.fr&#x2F;about&#x2F;" />
+
+  
+  <script src="/i18n.js"></script>
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <style>
+@keyframes color-shift {
+  0%, 100% {
+    color: #4a90d9;
+  }
+  50% {
+    color: #6aabf0;
+  }
+}
+
+.title-hover {
+  transition: transform 0.3s ease-in-out, color 0.5s ease-out;
+  text-shadow: 1px 1px 1px rgba(0, 17, 18, 0.5);
+}
+
+.title-hover:hover {
+  animation: color-shift 3s ease-in-out infinite;
+  transform: scale(1.05);
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: transform 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 6px;
+  bottom: 4px;
+  transition: 0.4s;
+  background-image: url('/icons/theme.svg');
+  background-repeat: no-repeat;
+  background-size: 200% 100%;
+  background-position: left center;
+  border-radius: 50%;
+}
+
+.slider:hover {
+  outline: #4a90d9 solid 2px;
+  transition: outline .1s;
+}
+
+input:checked + .slider {
+  background-color: var(--block-bg-dark);
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+  background-position: right center;
+  filter: invert(1);
+}
+</style>
+
+<header
+  class="header fixed top-0 z-40 mx-auto min-h-[3.5rem] w-full"
+>
+  <div class="mx-auto w-full max-w-5xl p-3 flex items-center justify-center relative">
+
+      <!-- Center: Name + Nav -->
+      <div class="flex items-center gap-10">
+        <a style="display: block; margin-top: -6px; margin-right: 2rem;" class="title-hover text-2xl font-semibold" href="https://lorisdrid.fr">Loris Drid</a>
+        
+        <nav class="hidden lg:flex items-center">
+          <ul class="flex flex-row">
+            
+            
+            
+            
+            <li>
+              <a
+                class="primary-link block text-lg font-medium px-5 py-3"
+                href="https://lorisdrid.fr/portfolio"
+                data-i18n="nav.projects"
+              >📂 Projects</a>
+            </li>
+            
+            
+            
+            
+            <li>
+              <a
+                class="primary-link block text-lg font-medium px-5 py-3"
+                href="https://lorisdrid.fr/about"
+                data-i18n="nav.about"
+              >ℹ️ About Me</a>
+            </li>
+            
+          </ul>
+        </nav>
+        
+      </div>
+
+      <!-- Right: mobile menu btn + toggle (absolute right) -->
+      <div style="position: fixed; right: 1.5rem; top: 0.75rem; z-index: 50;" class="flex items-center gap-3">
+        
+        <div class="flex relative justify-center gap-2.5 lg:hidden items-end">
+          <a class="text-1xl font-semibold">Menu</a>
+          <div
+            class="btn-menu flex relative justify-center flex-col z-50 gap-2.5 cursor-pointer h-8 w-8 shrink-0 items-center"
+            role="button"
+            aria-label="Menu"
+          ></div>
+        </div>
+        
+        <div style="display: flex; gap: 4px; margin-right: 12px;" id="lang-switcher">
+          <button onclick="switchLang('en')" id="lang-en" style="cursor: pointer; border: 2px solid transparent; border-radius: 3px; padding: 1px; background: none; transition: border-color 0.15s ease;">
+            <img src="https://flagcdn.com/w40/gb.png" alt="English" style="width: 28px; height: 18px; display: block; border-radius: 2px;" />
+          </button>
+          <button onclick="switchLang('fr')" id="lang-fr" style="cursor: pointer; border: 2px solid transparent; border-radius: 3px; padding: 1px; background: none; transition: border-color 0.15s ease;">
+            <img src="https://flagcdn.com/w40/fr.png" alt="Français" style="width: 28px; height: 18px; display: block; border-radius: 2px;" />
+          </button>
+        </div>
+        <label class="switch btn-dark h-6 w-6" aria-label="Theme toggle">
+          <input type="checkbox" id="theme-toggle" />
+          <span class="slider round"></span>
+        </label>
+      </div>
+    </div>
+
+    <script>
+      const htmlClass = document.documentElement.classList;
+      const darkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+      const themeToggle = document.getElementById("theme-toggle");
+
+      const setDark = (isDark) => {
+        if (isDark) {
+          htmlClass.add("dark");
+          document.body.dispatchEvent(new CustomEvent("set-theme", { detail: "dark" }));
+        } else {
+          htmlClass.remove("dark");
+          document.body.dispatchEvent(new CustomEvent("set-theme", { detail: "light" }));
+        }
+        localStorage.setItem("dark", isDark);
+        themeToggle.checked = isDark;
+      };
+
+      setTimeout(() => htmlClass.remove("not-ready"), 10);
+      const stored = localStorage.getItem("dark");
+      const prefersDark = stored ? stored === "true" : darkScheme.matches;
+      setDark(prefersDark);
+
+      darkScheme.addEventListener("change", (e) => {
+        const stored = localStorage.getItem("dark");
+        if (stored === null) setDark(e.matches);
+      });
+
+      themeToggle.addEventListener("change", () => {
+        setDark(themeToggle.checked);
+      });
+
+      const btnMenu = document.querySelector(".btn-menu");
+      btnMenu?.addEventListener("click", () => htmlClass.toggle("open"));
+    </script>
+
+    <!-- Mobile nav (hidden by default, shown when .open is on html) -->
+    
+    <nav class="lg:hidden">
+      <ul class="nav-wrapper flex w-full flex-col py-2">
+        
+        <li>
+          <a
+            class="primary-link block py-3 text-center text-lg font-medium"
+            href="https://lorisdrid.fr/portfolio"
+          >📂 Projects</a>
+        </li>
+        
+        <li>
+          <a
+            class="primary-link block py-3 text-center text-lg font-medium"
+            href="https://lorisdrid.fr/about"
+          >ℹ️ About Me</a>
+        </li>
+        
+      </ul>
+    </nav>
+    
+  </div>
+</header>
+
+
+    
+
+    <main
+      class="prose prose-neutral dark:prose-invert prose-pre:rounded-lg prose-img:rounded-lg relative mx-auto min-h-[calc(100vh-9rem)] max-w-3xl px-4 pt-24 pb-16 break-words lg:pt-32"
+    >
+      
+
+
+
+
+
+
+<h1 class="mb-16" data-i18n-en="About Me" data-i18n-fr="À propos" data-i18n-switch>About Me</h1>
+
+<h2 data-i18n="about.experience">💻 Experience</h2>
+
+<div class="experience-card">
+  <div class="card-header">
+    <h3 class="card-title" data-i18n-en="UI Cloud Engineer Intern" data-i18n-fr="Stage Ingénieur UI Cloud" data-i18n-switch>UI Cloud Engineer Intern</h3>
+    <span class="card-date">Mar 2025 – Sep 2025</span>
+  </div>
+
+  <p class="card-desc" data-i18n-en="Full-stack development (Java Spring Boot, SAP UI5) in agile teams. Designed multi-tenant cloud features for enterprise BPMN workflows (1,000+ tenants). Created AI-powered proof of concept for BPMN editor with 50+ Figma screens." data-i18n-fr="Développement full-stack (Java Spring Boot, SAP UI5) en équipes agiles. Conception de fonctionnalités cloud multi-tenant pour workflows BPMN (1 000+ tenants). Création d&#x27;un proof of concept IA pour un éditeur BPMN avec 50+ écrans Figma." data-i18n-switch>Full-stack development (Java Spring Boot, SAP UI5) in agile teams. Designed multi-tenant cloud features for enterprise BPMN workflows (1,000+ tenants). Created AI-powered proof of concept for BPMN editor with 50+ Figma screens.</p>
+
+  
+  <div class="card-tags">
+    
+    <span class="card-tag">Java Spring Boot</span>
+    
+    <span class="card-tag">SAP UI5</span>
+    
+    <span class="card-tag">BPMN</span>
+    
+    <span class="card-tag">Figma</span>
+    
+    <span class="card-tag">Agile</span>
+    
+  </div>
+  
+
+  <div class="card-footer">
+    <span class="card-location" data-i18n-en="SAP Labs | Mougins, France" data-i18n-fr="SAP Labs | Mougins, France" data-i18n-switch>SAP Labs | Mougins, France</span>
+    
+    <a href="https:&#x2F;&#x2F;www.sap.com" target="_blank" rel="noopener">
+      <img src="&#x2F;images&#x2F;sap-logo.png" alt="UI Cloud Engineer Intern logo" class="card-logo" style="position: static;" />
+    </a>
+    
+  </div>
+</div>
+
+<div class="experience-card">
+  <div class="card-header">
+    <h3 class="card-title" data-i18n-en="Full-Stack Developer Intern" data-i18n-fr="Stage Développeur Full-Stack" data-i18n-switch>Full-Stack Developer Intern</h3>
+    <span class="card-date">May 2024 – Aug 2024</span>
+  </div>
+
+  <p class="card-desc" data-i18n-en="End-to-end development of eco-responsible e-commerce platform. MongoDB integration and CO2 emissions calculation API. Eco-labeled product catalog with optimized UI, iterating based on user feedback." data-i18n-fr="Développement complet d&#x27;une plateforme e-commerce éco-responsable. Intégration MongoDB et API de calcul d&#x27;émissions CO2. Catalogue de produits éco-labellisés avec UI optimisée, itérations basées sur les retours utilisateurs." data-i18n-switch>End-to-end development of eco-responsible e-commerce platform. MongoDB integration and CO2 emissions calculation API. Eco-labeled product catalog with optimized UI, iterating based on user feedback.</p>
+
+  
+  <div class="card-tags">
+    
+    <span class="card-tag">MongoDB</span>
+    
+    <span class="card-tag">REST API</span>
+    
+    <span class="card-tag">Node.js</span>
+    
+    <span class="card-tag">UX Design</span>
+    
+  </div>
+  
+
+  <div class="card-footer">
+    <span class="card-location" data-i18n-en="DNIIT | Da Nang, Vietnam" data-i18n-fr="DNIIT | Da Nang, Viêtnam" data-i18n-switch>DNIIT | Da Nang, Vietnam</span>
+    
+    <a href="https:&#x2F;&#x2F;dniit.com" target="_blank" rel="noopener">
+      <img src="&#x2F;images&#x2F;dniit-logo.png" alt="Full-Stack Developer Intern logo" class="card-logo" style="position: static;" />
+    </a>
+    
+  </div>
+</div>
+
+
+<h2 data-i18n="about.education">🎓 Education</h2>
+
+<div class="experience-card">
+  <div class="card-header">
+    <h3 class="card-title" data-i18n-en="Engineer&#x27;s Degree in Computer Science" data-i18n-fr="Diplôme d&#x27;Ingénieur en Informatique" data-i18n-switch>Engineer&#x27;s Degree in Computer Science</h3>
+    <span class="card-date">Sep 2022 – Jun 2025</span>
+  </div>
+
+  <p class="card-desc" data-i18n-en="Specialization in Human-Computer Interaction (HCI) and Software Engineering." data-i18n-fr="Spécialisation en Interaction Homme-Machine (IHM) et Génie Logiciel." data-i18n-switch>Specialization in Human-Computer Interaction (HCI) and Software Engineering.</p>
+
+  
+  <div class="card-tags">
+    
+    <span class="card-tag">HCI</span>
+    
+    <span class="card-tag">Software Engineering</span>
+    
+    <span class="card-tag">Agile</span>
+    
+    <span class="card-tag">UX Research</span>
+    
+  </div>
+  
+
+  <div class="card-footer">
+    <span class="card-location">Polytech Nice Sophia | Nice, France</span>
+    
+    <a href="https:&#x2F;&#x2F;polytech.univ-cotedazur.fr" target="_blank" rel="noopener">
+      <img src="&#x2F;images&#x2F;polytech-logo.png" alt="Engineer&#x27;s Degree in Computer Science logo" class="card-logo" style="position: static;" />
+    </a>
+    
+  </div>
+</div>
+
+<div class="experience-card">
+  <div class="card-header">
+    <h3 class="card-title" data-i18n-en="Preparatory Classes - Mathematics &amp; Physics" data-i18n-fr="Classes Préparatoires - Mathématiques &amp; Physique" data-i18n-switch>Preparatory Classes - Mathematics &amp; Physics</h3>
+    <span class="card-date">Sep 2020 – Jun 2022</span>
+  </div>
+
+  <p class="card-desc" data-i18n-en="Intensive two-year program in mathematics and physics preparing for engineering school entrance exams." data-i18n-fr="Programme intensif de deux ans en mathématiques et physique préparant aux concours d&#x27;entrée en école d&#x27;ingénieurs." data-i18n-switch>Intensive two-year program in mathematics and physics preparing for engineering school entrance exams.</p>
+
+  
+  <div class="card-tags">
+    
+    <span class="card-tag">Mathematics</span>
+    
+    <span class="card-tag">Physics</span>
+    
+    <span class="card-tag">Algorithms</span>
+    
+  </div>
+  
+
+  <div class="card-footer">
+    <span class="card-location">Lycée Claude Fauriel | Saint-Étienne, France</span>
+    
+    <a href="https:&#x2F;&#x2F;fauriel.fr" target="_blank" rel="noopener">
+      <img src="&#x2F;images&#x2F;fauriel-logo.jpg" alt="Preparatory Classes - Mathematics &amp; Physics logo" class="card-logo" style="position: static;" />
+    </a>
+    
+  </div>
+</div>
+
+
+<h2 data-i18n="about.skills">🛠 Skills</h2>
+<div class="not-prose mt-6 flex flex-col">
+  
+  <div class="skills-category">
+    <h3>Frontend &amp; UX</h3>
+    <div class="skills-grid">
+      
+        <a href="https:&#x2F;&#x2F;react.dev" target="_blank" rel="noopener" class="skill-item">
+          React
+        </a>
+      
+        <a href="https:&#x2F;&#x2F;angular.io" target="_blank" rel="noopener" class="skill-item">
+          Angular
+        </a>
+      
+        <a href="https:&#x2F;&#x2F;sapui5.hana.ondemand.com" target="_blank" rel="noopener" class="skill-item">
+          SAP UI5
+        </a>
+      
+        <a href="https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;CSS" target="_blank" rel="noopener" class="skill-item">
+          HTML&#x2F;CSS
+        </a>
+      
+        <a href="https:&#x2F;&#x2F;www.figma.com" target="_blank" rel="noopener" class="skill-item">
+          Figma
+        </a>
+      
+    </div>
+  </div>
+  
+  <div class="skills-category">
+    <h3>Backend &amp; DevOps</h3>
+    <div class="skills-grid">
+      
+        <a href="https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Java_(programming_language)" target="_blank" rel="noopener" class="skill-item">
+          Java
+        </a>
+      
+        <a href="https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Python_(programming_language)" target="_blank" rel="noopener" class="skill-item">
+          Python
+        </a>
+      
+        <a href="https:&#x2F;&#x2F;spring.io&#x2F;projects&#x2F;spring-boot" target="_blank" rel="noopener" class="skill-item">
+          Spring Boot
+        </a>
+      
+        <a href="https:&#x2F;&#x2F;nodejs.org" target="_blank" rel="noopener" class="skill-item">
+          Node.js
+        </a>
+      
+        <a href="https:&#x2F;&#x2F;www.docker.com" target="_blank" rel="noopener" class="skill-item">
+          Docker
+        </a>
+      
+        <a href="https:&#x2F;&#x2F;github.com" target="_blank" rel="noopener" class="skill-item">
+          Git&#x2F;GitHub
+        </a>
+      
+    </div>
+  </div>
+  
+  <div class="skills-category">
+    <h3>Data &amp; Tools</h3>
+    <div class="skills-grid">
+      
+        <a href="https:&#x2F;&#x2F;www.mongodb.com" target="_blank" rel="noopener" class="skill-item">
+          MongoDB
+        </a>
+      
+        <a href="https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;SQL" target="_blank" rel="noopener" class="skill-item">
+          SQL
+        </a>
+      
+        <a href="https:&#x2F;&#x2F;www.influxdata.com" target="_blank" rel="noopener" class="skill-item">
+          InfluxDB
+        </a>
+      
+        <a href="https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;C_Sharp_(programming_language)" target="_blank" rel="noopener" class="skill-item">
+          C#
+        </a>
+      
+        <a href="https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;JavaScript" target="_blank" rel="noopener" class="skill-item">
+          JavaScript
+        </a>
+      
+    </div>
+  </div>
+  
+</div>
+
+<h2 data-i18n="about.languages">🌍 Languages</h2>
+<div class="not-prose mt-6 flex flex-wrap gap-4">
+  
+  <div class="experience-card" style="text-align: center; flex: 1; min-width: 180px;">
+    
+    <div style="display: flex; justify-content: center; margin-bottom: 0.75rem;">
+      <img src="https:&#x2F;&#x2F;flagcdn.com&#x2F;w40&#x2F;fr.png" alt="French flag" class="lang-flag" />
+    </div>
+    
+    <h3 class="card-title" style="font-size: 1.1rem;" data-i18n-en="French" data-i18n-fr="Français" data-i18n-switch>French</h3>
+    <p class="card-desc" style="color: var(--text-secondary); font-size: 0.9rem; margin: 0.25rem 0 0 0;" data-i18n-en="Native" data-i18n-fr="Natif" data-i18n-switch>Native</p>
+  </div>
+  
+  <div class="experience-card" style="text-align: center; flex: 1; min-width: 180px;">
+    
+    <div style="display: flex; justify-content: center; margin-bottom: 0.75rem;">
+      <img src="https:&#x2F;&#x2F;flagcdn.com&#x2F;w40&#x2F;gb.png" alt="English flag" class="lang-flag" />
+    </div>
+    
+    <h3 class="card-title" style="font-size: 1.1rem;" data-i18n-en="English" data-i18n-fr="Anglais" data-i18n-switch>English</h3>
+    <p class="card-desc" style="color: var(--text-secondary); font-size: 0.9rem; margin: 0.25rem 0 0 0;" data-i18n-en="C1 (TOEIC 940)" data-i18n-fr="C1 (TOEIC 940)" data-i18n-switch>C1 (TOEIC 940)</p>
+  </div>
+  
+</div>
+
+
+    </main>
+    
+    <footer class="mx-auto flex max-w-3xl flex-wrap items-center px-8 py-4 text-sm opacity-60">
+  <div class="mr-auto basis-full lg:basis-1/2">
+    
+    
+    &copy; 2025 - 2026
+    
+    <a class="link" href="https://lorisdrid.fr">
+      Loris Drid
+    </a>
+     |
+    
+    <a class="link" href="https:&#x2F;&#x2F;github.com&#x2F;lorisdrid&#x2F;lorisdrid.github.io&#x2F;blob&#x2F;main&#x2F;LICENSE" rel="noopener" target="_blank">
+      MIT License
+    </a>
+    
+    
+  </div>
+  <div class="flex basis-full lg:basis-1/2 lg:justify-end">
+    <a class="link mr-6 lg:ml-6" href="https://www.getzola.org/" rel="noopener" target="_blank">
+      Powered by Zola
+    </a>
+  </div>
+  
+</footer>
+
+    
+  </body>
+</html>

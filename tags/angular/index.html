@@ -1,0 +1,375 @@
+<!doctype html>
+<html class="not-ready lg:text-base" lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <title>
+    Loris Drid
+  </title>
+
+  <meta name="theme-color" />
+
+  
+    
+    <meta name="description" content="Loris Drid&#x27;s Personal Website" />
+    <meta name="author" content="Loris Drid" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Loris Drid" />
+    <meta property="og:description" content="Loris Drid&#x27;s Personal Website" />
+    <meta property="og:url" content="https://lorisdrid.fr" />
+    
+  
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="preload" as="style" href="https://lorisdrid.fr/main.css" />
+  
+  <link rel="preload" as="image" href="https://lorisdrid.fr/icons/avatar.webp" type="image/webp" imagesrcset="https://lorisdrid.fr/icons/avatar.webp" />
+  <link rel="preload" as="image" href="https://lorisdrid.fr/icons/theme.svg" />
+
+  <link rel="stylesheet" href="https://lorisdrid.fr/main.css" />
+  <link rel="stylesheet" href="https://lorisdrid.fr/custom.css" />
+
+  <style>
+    :root {
+      --bg: #e8e8f0;
+      --bg-dark: #1a1a2c;
+      --header: #dcdce8;
+      --header-dark: #141424;
+    }
+  </style>
+
+  
+
+  
+
+  
+
+  <link rel="icon" href="https://lorisdrid.fr/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://lorisdrid.fr/apple-touch-icon.png" />
+
+  
+    
+      <link rel="alternate" type="application/atom+xml" title="Atom" href="https://lorisdrid.fr/atom.xml" />
+    
+    
+  
+
+  <link rel="canonical" href="https:&#x2F;&#x2F;lorisdrid.fr" />
+
+  
+  <script src="/i18n.js"></script>
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <style>
+@keyframes color-shift {
+  0%, 100% {
+    color: #4a90d9;
+  }
+  50% {
+    color: #6aabf0;
+  }
+}
+
+.title-hover {
+  transition: transform 0.3s ease-in-out, color 0.5s ease-out;
+  text-shadow: 1px 1px 1px rgba(0, 17, 18, 0.5);
+}
+
+.title-hover:hover {
+  animation: color-shift 3s ease-in-out infinite;
+  transform: scale(1.05);
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: transform 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 6px;
+  bottom: 4px;
+  transition: 0.4s;
+  background-image: url('/icons/theme.svg');
+  background-repeat: no-repeat;
+  background-size: 200% 100%;
+  background-position: left center;
+  border-radius: 50%;
+}
+
+.slider:hover {
+  outline: #4a90d9 solid 2px;
+  transition: outline .1s;
+}
+
+input:checked + .slider {
+  background-color: var(--block-bg-dark);
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+  background-position: right center;
+  filter: invert(1);
+}
+</style>
+
+<header
+  class="header fixed top-0 z-40 mx-auto min-h-[3.5rem] w-full"
+>
+  <div class="mx-auto w-full max-w-5xl p-3 flex items-center justify-center relative">
+
+      <!-- Center: Name + Nav -->
+      <div class="flex items-center gap-10">
+        <a style="display: block; margin-top: -6px; margin-right: 2rem;" class="title-hover text-2xl font-semibold" href="https://lorisdrid.fr">Loris Drid</a>
+        
+        <nav class="hidden lg:flex items-center">
+          <ul class="flex flex-row">
+            
+            
+            
+            
+            <li>
+              <a
+                class="primary-link block text-lg font-medium px-5 py-3"
+                href="https://lorisdrid.fr/portfolio"
+                data-i18n="nav.projects"
+              >📂 Projects</a>
+            </li>
+            
+            
+            
+            
+            <li>
+              <a
+                class="primary-link block text-lg font-medium px-5 py-3"
+                href="https://lorisdrid.fr/about"
+                data-i18n="nav.about"
+              >ℹ️ About Me</a>
+            </li>
+            
+          </ul>
+        </nav>
+        
+      </div>
+
+      <!-- Right: mobile menu btn + toggle (absolute right) -->
+      <div style="position: fixed; right: 1.5rem; top: 0.75rem; z-index: 50;" class="flex items-center gap-3">
+        
+        <div class="flex relative justify-center gap-2.5 lg:hidden items-end">
+          <a class="text-1xl font-semibold">Menu</a>
+          <div
+            class="btn-menu flex relative justify-center flex-col z-50 gap-2.5 cursor-pointer h-8 w-8 shrink-0 items-center"
+            role="button"
+            aria-label="Menu"
+          ></div>
+        </div>
+        
+        <div style="display: flex; gap: 4px; margin-right: 12px;" id="lang-switcher">
+          <button onclick="switchLang('en')" id="lang-en" style="cursor: pointer; border: 2px solid transparent; border-radius: 3px; padding: 1px; background: none; transition: border-color 0.15s ease;">
+            <img src="https://flagcdn.com/w40/gb.png" alt="English" style="width: 28px; height: 18px; display: block; border-radius: 2px;" />
+          </button>
+          <button onclick="switchLang('fr')" id="lang-fr" style="cursor: pointer; border: 2px solid transparent; border-radius: 3px; padding: 1px; background: none; transition: border-color 0.15s ease;">
+            <img src="https://flagcdn.com/w40/fr.png" alt="Français" style="width: 28px; height: 18px; display: block; border-radius: 2px;" />
+          </button>
+        </div>
+        <label class="switch btn-dark h-6 w-6" aria-label="Theme toggle">
+          <input type="checkbox" id="theme-toggle" />
+          <span class="slider round"></span>
+        </label>
+      </div>
+    </div>
+
+    <script>
+      const htmlClass = document.documentElement.classList;
+      const darkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+      const themeToggle = document.getElementById("theme-toggle");
+
+      const setDark = (isDark) => {
+        if (isDark) {
+          htmlClass.add("dark");
+          document.body.dispatchEvent(new CustomEvent("set-theme", { detail: "dark" }));
+        } else {
+          htmlClass.remove("dark");
+          document.body.dispatchEvent(new CustomEvent("set-theme", { detail: "light" }));
+        }
+        localStorage.setItem("dark", isDark);
+        themeToggle.checked = isDark;
+      };
+
+      setTimeout(() => htmlClass.remove("not-ready"), 10);
+      const stored = localStorage.getItem("dark");
+      const prefersDark = stored ? stored === "true" : darkScheme.matches;
+      setDark(prefersDark);
+
+      darkScheme.addEventListener("change", (e) => {
+        const stored = localStorage.getItem("dark");
+        if (stored === null) setDark(e.matches);
+      });
+
+      themeToggle.addEventListener("change", () => {
+        setDark(themeToggle.checked);
+      });
+
+      const btnMenu = document.querySelector(".btn-menu");
+      btnMenu?.addEventListener("click", () => htmlClass.toggle("open"));
+    </script>
+
+    <!-- Mobile nav (hidden by default, shown when .open is on html) -->
+    
+    <nav class="lg:hidden">
+      <ul class="nav-wrapper flex w-full flex-col py-2">
+        
+        <li>
+          <a
+            class="primary-link block py-3 text-center text-lg font-medium"
+            href="https://lorisdrid.fr/portfolio"
+          >📂 Projects</a>
+        </li>
+        
+        <li>
+          <a
+            class="primary-link block py-3 text-center text-lg font-medium"
+            href="https://lorisdrid.fr/about"
+          >ℹ️ About Me</a>
+        </li>
+        
+      </ul>
+    </nav>
+    
+  </div>
+</header>
+
+
+    
+
+    <main
+      class="prose prose-neutral dark:prose-invert prose-pre:rounded-lg prose-img:rounded-lg relative mx-auto min-h-[calc(100vh-9rem)] max-w-3xl px-4 pt-24 pb-16 break-words lg:pt-32"
+    >
+      
+<h1 class="mb-16">#Angular</h1>
+
+
+
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 items-stretch">
+
+  
+  
+    
+  
+
+  
+  
+    
+    <section
+      class="card-hover block-bg relative rounded-lg p-4 lg:p-6 cursor-pointer h-full min-h-[300px] md:min-h-[350px] flex flex-col"
+    >
+      
+      <figure class="mt-0 mb-4 flex-shrink-0 relative">
+        <img
+          class="h-48 md:h-40 lg:h-48 w-full rounded-lg object-cover object-center transition-transform duration-200 hover:scale-[1.02]"
+          src="https://lorisdrid.fr/images/zqsd-preview.png"
+          alt="ZQSD Preview"
+        />
+      </figure>
+      
+
+      <h3 class="my-0! pb-1 leading-tight! font-bold text-lg transition-colors duration-200 hover:text-[var(--hint-color)] flex-shrink-0" data-i18n-switch data-i18n-en="🧠 ZQSD — Cognitive Accessibility Quiz" data-i18n-fr="🧠 ZQSD — Quiz pour l&#x27;accessibilité cognitive">🧠 ZQSD — Cognitive Accessibility Quiz</h3>
+
+      <div class="not-prose my-2 flex-grow">
+        
+        <p class="text-sm md:text-base opacity-80 line-clamp-3" data-i18n-switch data-i18n-en="A quiz website designed for elderly people with vascular dementia, with an interface adapted for accessibility." data-i18n-fr="Site de quiz conçu en équipe pour des personnes âgées atteintes de démence vasculaire, avec une interface adaptée à l&#x27;accessibilité.">A quiz website designed for elderly people with vascular dementia, with an interface adapted for accessibility.</p>
+        
+      </div>
+
+      <div class="mt-auto pt-2 flex-shrink-0">
+        <div class="text-sm antialiased opacity-60">
+  
+  <time>15 Mar 2024</time>
+  
+  
+</div>
+
+      </div>
+
+      <a class="absolute inset-0 text-[0px] z-10" href="https:&#x2F;&#x2F;lorisdrid.fr&#x2F;portfolio&#x2F;zqsd&#x2F;">🧠 ZQSD — Cognitive Accessibility Quiz</a>
+    </section>
+    
+  
+
+</div>
+
+<script>
+document.querySelectorAll('.card-hover').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const rect = card.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
+    card.style.setProperty('--mouse-x', `${x}%`);
+    card.style.setProperty('--mouse-y', `${y}%`);
+  });
+});
+</script>
+
+
+
+
+    </main>
+    
+    <footer class="mx-auto flex max-w-3xl flex-wrap items-center px-8 py-4 text-sm opacity-60">
+  <div class="mr-auto basis-full lg:basis-1/2">
+    
+    
+    &copy; 2025 - 2026
+    
+    <a class="link" href="https://lorisdrid.fr">
+      Loris Drid
+    </a>
+     |
+    
+    <a class="link" href="https:&#x2F;&#x2F;github.com&#x2F;lorisdrid&#x2F;lorisdrid.github.io&#x2F;blob&#x2F;main&#x2F;LICENSE" rel="noopener" target="_blank">
+      MIT License
+    </a>
+    
+    
+  </div>
+  <div class="flex basis-full lg:basis-1/2 lg:justify-end">
+    <a class="link mr-6 lg:ml-6" href="https://www.getzola.org/" rel="noopener" target="_blank">
+      Powered by Zola
+    </a>
+  </div>
+  
+</footer>
+
+    
+  </body>
+</html>
