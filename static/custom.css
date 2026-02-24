@@ -19,6 +19,11 @@
   --code-bg: #e4e4f0;
   --tag-bg: rgba(0, 0, 0, 0.05);
   --icon-invert: 0.3;
+
+  /* WCAG AA-compliant title color (5.5:1 on --card-bg light) */
+  --card-title-color: #1a5dad;
+  /* WCAG AA-compliant nav link color (7:1 on --header-bg light) */
+  --nav-link-color: #1e293b;
 }
 
 .dark {
@@ -32,6 +37,11 @@
   --code-bg: #16162a;
   --tag-bg: rgba(255, 255, 255, 0.06);
   --icon-invert: 0.7;
+
+  /* WCAG AA-compliant title color (4.8:1 on --card-bg dark) */
+  --card-title-color: #4a90d9;
+  /* WCAG AA-compliant nav link color (13:1 on --header-bg dark) */
+  --nav-link-color: #e0e0e0;
 }
 
 /* --- Base --- */
@@ -76,7 +86,7 @@ header .title-hover {
 
 /* --- Nav centered with title --- */
 header .primary-link {
-  color: var(--text-primary) !important;
+  color: var(--nav-link-color) !important;
 }
 
 header .primary-link:hover {
@@ -131,7 +141,7 @@ header .primary-link:hover {
 }
 
 .experience-card .card-title {
-  color: var(--accent);
+  color: var(--card-title-color);
   font-size: 1.25rem;
   font-weight: 600;
   margin: 0 !important;
@@ -185,6 +195,48 @@ header .primary-link:hover {
   color: var(--text-secondary);
   font-size: 0.9rem;
   margin-top: 1rem;
+}
+
+/* --- Experience card: header row (title + date) --- */
+.experience-card .card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* --- Experience card: footer row (location + logo) --- */
+.experience-card .card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 1rem;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* --- Mobile: stack card-header vertically --- */
+@media (max-width: 640px) {
+  .experience-card .card-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .experience-card .card-date {
+    white-space: normal;
+  }
+
+  .experience-card .card-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .experience-card .card-logo {
+    position: static;
+    margin-top: 0.5rem;
+    max-height: 40px;
+  }
 }
 
 /* --- Skills section --- */
@@ -310,6 +362,22 @@ pre {
 /* --- Slider --- */
 .slider:hover {
   outline-color: var(--accent);
+}
+
+/* --- Mobile nav: render as dropdown below header, not inline ---
+   Prevents the fixed header from expanding and covering page content. */
+@media (max-width: 1023px) {
+  header > nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--header-bg);
+    border-top: 1px solid var(--card-border);
+    border-bottom: 2px solid var(--accent);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    z-index: 50;
+  }
 }
 
 /* --- Scrollbar --- */

@@ -12,7 +12,7 @@
 <h2 data-i18n="about.experience">💻 Experience</h2>
 {% for experience in data.experience %}
 <div class="experience-card">
-  <div style="display: flex; justify-content: space-between; align-items: center;">
+  <div class="card-header">
     <h3 class="card-title" data-i18n-en="{{ experience.name }}" data-i18n-fr="{{ experience.name_fr | default(value=experience.name) }}" data-i18n-switch>{{ experience.name }}</h3>
     <span class="card-date">{{ experience.start_date }}{% if experience.end_date %} – {{ experience.end_date }}{% endif %}</span>
   </div>
@@ -27,7 +27,7 @@
   </div>
   {% endif %}
 
-  <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 1rem;">
+  <div class="card-footer">
     <span class="card-location" data-i18n-en="{{ experience.location }}" data-i18n-fr="{{ experience.location_fr | default(value=experience.location) }}" data-i18n-switch>{{ experience.location }}</span>
     {% if experience.logo %}
     <a href="{{ experience.links[0].url }}" target="_blank" rel="noopener">
@@ -41,7 +41,7 @@
 <h2 data-i18n="about.education">🎓 Education</h2>
 {% for education in data.education %}
 <div class="experience-card">
-  <div style="display: flex; justify-content: space-between; align-items: center;">
+  <div class="card-header">
     <h3 class="card-title" data-i18n-en="{{ education.name }}" data-i18n-fr="{{ education.name_fr | default(value=education.name) }}" data-i18n-switch>{{ education.name }}</h3>
     <span class="card-date">{{ education.start_date }}{% if education.end_date %} – {{ education.end_date }}{% endif %}</span>
   </div>
@@ -56,7 +56,7 @@
   </div>
   {% endif %}
 
-  <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 1rem;">
+  <div class="card-footer">
     <span class="card-location">{{ education.location }}</span>
     {% if education.logo %}
     <a href="{{ education.links[0].url }}" target="_blank" rel="noopener">

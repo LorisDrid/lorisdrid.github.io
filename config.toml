@@ -26,9 +26,11 @@ taxonomies = [{ name = "tags", rss = true }]
 # The Kita theme style config.
 [extra]
 # Enable KaTex math formula support globally.
-math = true
+# Set to false here and enable per-page via [extra] math = true in front matter.
+math = false
 # Enable mermaid support globally.
-mermaid = true
+# Set to false here and enable per-page via [extra] mermaid = true in front matter.
+mermaid = false
 # Enable comment support globally.
 comment = false
 

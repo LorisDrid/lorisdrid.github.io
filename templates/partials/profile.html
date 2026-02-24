@@ -4,11 +4,19 @@
   <div
     class="not-prose mr-5 rounded-full shrink-0 border-black/10 bg-white/50 shadow-sm dark:bg-white/10"
   >
-    <img
-      class="{% if config.extra.profile.avatar_invert %}dark:invert{% endif %} my-0 aspect-square w-32 rounded-full bg-black/5!"
-      src="{{ get_url(path=config.extra.profile.avatar_url) }}"
-      alt="{{ config.extra.profile.name | default(value=config.title) }}"
-    />
+    {% set avatar_webp = config.extra.profile.avatar_url | replace(from=".png", to=".webp") | replace(from=".jpg", to=".webp") | replace(from=".jpeg", to=".webp") %}
+    <picture>
+      <source srcset="{{ get_url(path=avatar_webp) }}" type="image/webp" />
+      <img
+        class="{% if config.extra.profile.avatar_invert %}dark:invert{% endif %} my-0 aspect-square w-32 rounded-full bg-black/5!"
+        src="{{ get_url(path=config.extra.profile.avatar_url) }}"
+        alt="{{ config.extra.profile.name | default(value=config.title) }}"
+        width="128"
+        height="128"
+        loading="eager"
+        decoding="async"
+      />
+    </picture>
   </div>
   {% endif %}
 

@@ -9,7 +9,7 @@ start_date = "Mar 2025"
 end_date = "Sep 2025"
 location = "SAP Labs | Mougins, France"
 tags = ["Java Spring Boot", "SAP UI5", "BPMN", "Figma", "Agile"]
-logo = "/images/sap-logo.jpg"
+logo = "/images/sap-logo.png"
 links = [{ name = "SAP", url = "https://www.sap.com" }]
 
 [[experience]]
