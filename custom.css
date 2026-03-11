@@ -1,0 +1,399 @@
+/* ============================================
+   Loris Drid — Pro Theme with Blue Accent
+   Light & Dark mode support
+   ============================================ */
+
+:root {
+  --accent: #4a90d9;
+  --accent-light: #6aabf0;
+  --accent-dim: rgba(74, 144, 217, 0.15);
+
+  /* Light mode defaults */
+  --card-bg: #f0f0f5;
+  --card-border: #d0d0dd;
+  --bg-page: #e8e8f0;
+  --text-primary: #2a2a3a;
+  --text-secondary: #5a5a70;
+  --heading-color: #1a1a2c;
+  --header-bg: #dcdce8;
+  --code-bg: #e4e4f0;
+  --tag-bg: rgba(0, 0, 0, 0.05);
+  --icon-invert: 0.3;
+
+  /* WCAG AA-compliant title color (5.5:1 on --card-bg light) */
+  --card-title-color: #1a5dad;
+  /* WCAG AA-compliant nav link color (7:1 on --header-bg light) */
+  --nav-link-color: #1e293b;
+}
+
+.dark {
+  --card-bg: #24243a;
+  --card-border: #333350;
+  --bg-page: #1a1a2c;
+  --text-primary: #e0e0e0;
+  --text-secondary: #a0a0b0;
+  --heading-color: #ffffff;
+  --header-bg: #141424;
+  --code-bg: #16162a;
+  --tag-bg: rgba(255, 255, 255, 0.06);
+  --icon-invert: 0.7;
+
+  /* WCAG AA-compliant title color (4.8:1 on --card-bg dark) */
+  --card-title-color: #4a90d9;
+  /* WCAG AA-compliant nav link color (13:1 on --header-bg dark) */
+  --nav-link-color: #e0e0e0;
+}
+
+/* --- Base --- */
+body {
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--text-primary);
+  background: var(--bg-page);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: -0.025em;
+  color: var(--heading-color);
+}
+
+/* --- Links --- */
+a {
+  color: var(--accent);
+  transition: color 0.15s ease;
+}
+
+a:hover {
+  color: var(--accent-light);
+}
+
+/* --- Header --- */
+.header, header {
+  background: var(--header-bg) !important;
+  border-bottom: 2px solid var(--accent);
+}
+
+header .title-hover {
+  color: var(--accent);
+}
+
+/* --- Nav centered with title --- */
+header .primary-link {
+  color: var(--nav-link-color) !important;
+}
+
+header .primary-link:hover {
+  color: var(--accent) !important;
+}
+
+/* --- Profile card --- */
+.mb-12.flex.items-center {
+  padding: 2rem 1.5rem;
+  border-radius: 0.75rem;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.mb-12.flex.items-center h1 {
+  color: var(--heading-color);
+}
+
+.mb-12.flex.items-center .break-words {
+  color: var(--text-secondary);
+}
+
+/* --- Avatar --- */
+.mb-12.flex.items-center img.rounded-full {
+  width: 160px;
+  height: 160px;
+  min-width: 160px;
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* --- Social icons --- */
+.icon-link {
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  filter: invert(var(--icon-invert));
+}
+
+.icon-link:hover {
+  transform: scale(1.15);
+  filter: invert(calc(var(--icon-invert) + 0.2));
+}
+
+/* --- Experience / Education cards (about page) --- */
+.experience-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 0.75rem;
+  padding: 1.75rem;
+  margin-bottom: 1.25rem;
+  position: relative;
+}
+
+.experience-card .card-title {
+  color: var(--card-title-color);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1.4;
+}
+
+.experience-card .card-date {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  white-space: nowrap;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1.4;
+}
+
+.experience-card .card-desc {
+  color: var(--text-primary);
+  margin: 0.75rem 0;
+  line-height: 1.7;
+}
+
+.experience-card .card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.experience-card .card-tag {
+  display: inline-block;
+  border-radius: 0.375rem;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  background: var(--tag-bg);
+  color: var(--text-secondary);
+  border: 1px solid var(--card-border);
+}
+
+.experience-card .card-logo {
+  position: absolute;
+  bottom: 1.25rem;
+  right: 1.5rem;
+  max-height: 48px;
+  max-width: 120px;
+  object-fit: contain;
+}
+
+.experience-card .card-location {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+/* --- Experience card: header row (title + date) --- */
+.experience-card .card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* --- Experience card: footer row (location + logo) --- */
+.experience-card .card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 1rem;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* --- Mobile: stack card-header vertically --- */
+@media (max-width: 640px) {
+  .experience-card .card-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .experience-card .card-date {
+    white-space: normal;
+  }
+
+  .experience-card .card-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .experience-card .card-logo {
+    position: static;
+    margin-top: 0.5rem;
+    max-height: 40px;
+  }
+}
+
+/* --- Skills section --- */
+.skills-category {
+  margin-bottom: 1.5rem;
+}
+
+.skills-category h3 {
+  color: var(--accent);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border-radius: 0.375rem;
+  padding: 0.3rem 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  background: var(--tag-bg);
+  color: var(--text-secondary);
+  border: 1px solid var(--card-border);
+  transition: all 0.15s ease;
+}
+
+.skill-item:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* --- Language flags --- */
+.lang-flag {
+  width: 36px;
+  height: 24px;
+  border-radius: 3px;
+  object-fit: cover;
+}
+
+/* --- Lang switcher flags --- */
+#lang-switcher button:hover {
+  opacity: 0.8 !important;
+}
+
+/* --- Tags in portfolio --- */
+a[href*="/tags/"] {
+  display: inline-block;
+  border-radius: 0.375rem;
+  padding: 0.2rem 0.7rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  background: var(--tag-bg);
+  color: var(--text-secondary);
+  border: 1px solid var(--card-border);
+  transition: all 0.15s ease;
+}
+
+a[href*="/tags/"]:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-dim);
+}
+
+/* --- Block backgrounds --- */
+.block-bg {
+  background: var(--card-bg) !important;
+  border: 1px solid var(--card-border);
+  border-radius: 0.75rem;
+}
+
+.block-hover:hover {
+  background: rgba(74, 144, 217, 0.08) !important;
+}
+
+/* --- Footer --- */
+footer {
+  border-top: 1px solid var(--card-border);
+  color: var(--text-secondary);
+}
+
+/* --- Selection --- */
+::selection {
+  background: var(--accent);
+  color: white;
+}
+
+/* --- Prose --- */
+.prose {
+  color: var(--text-primary);
+}
+
+.prose h1, .prose h2, .prose h3, .prose h4 {
+  color: var(--heading-color);
+}
+
+.prose strong {
+  color: var(--heading-color);
+}
+
+.prose a {
+  color: var(--accent);
+}
+
+.prose a:hover {
+  color: var(--accent-light);
+}
+
+/* --- Code blocks --- */
+pre {
+  border-radius: 0.75rem;
+  border: 1px solid var(--card-border);
+  background: var(--code-bg) !important;
+}
+
+/* --- Slider --- */
+.slider:hover {
+  outline-color: var(--accent);
+}
+
+/* --- Mobile nav: render as dropdown below header, not inline ---
+   Prevents the fixed header from expanding and covering page content. */
+@media (max-width: 1023px) {
+  header > nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--header-bg);
+    border-top: 1px solid var(--card-border);
+    border-bottom: 2px solid var(--accent);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    z-index: 50;
+  }
+}
+
+/* --- Scrollbar --- */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-page);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--card-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}

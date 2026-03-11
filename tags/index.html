@@ -1,0 +1,668 @@
+<!doctype html>
+<html class="not-ready lg:text-base" lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <title>
+    Loris Drid
+  </title>
+
+  <meta name="theme-color" />
+
+  
+    
+    <meta name="description" content="Loris Drid&#x27;s Personal Website" />
+    <meta name="author" content="Loris Drid" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Loris Drid" />
+    <meta property="og:description" content="Loris Drid&#x27;s Personal Website" />
+    <meta property="og:url" content="https://lorisdrid.fr" />
+    
+  
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="preload" as="style" href="https://lorisdrid.fr/main.css" />
+  
+  <link rel="preload" as="image" href="https://lorisdrid.fr/icons/avatar.webp" type="image/webp" imagesrcset="https://lorisdrid.fr/icons/avatar.webp" />
+  <link rel="preload" as="image" href="https://lorisdrid.fr/icons/theme.svg" />
+
+  <link rel="stylesheet" href="https://lorisdrid.fr/main.css" />
+  <link rel="stylesheet" href="https://lorisdrid.fr/custom.css" />
+
+  <style>
+    :root {
+      --bg: #e8e8f0;
+      --bg-dark: #1a1a2c;
+      --header: #dcdce8;
+      --header-dark: #141424;
+    }
+  </style>
+
+  
+
+  
+
+  
+
+  <link rel="icon" href="https://lorisdrid.fr/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://lorisdrid.fr/apple-touch-icon.png" />
+
+  
+    
+      <link rel="alternate" type="application/atom+xml" title="Atom" href="https://lorisdrid.fr/atom.xml" />
+    
+    
+  
+
+  <link rel="canonical" href="https:&#x2F;&#x2F;lorisdrid.fr" />
+
+  
+  <script src="/i18n.js"></script>
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <style>
+@keyframes color-shift {
+  0%, 100% {
+    color: #4a90d9;
+  }
+  50% {
+    color: #6aabf0;
+  }
+}
+
+.title-hover {
+  transition: transform 0.3s ease-in-out, color 0.5s ease-out;
+  text-shadow: 1px 1px 1px rgba(0, 17, 18, 0.5);
+}
+
+.title-hover:hover {
+  animation: color-shift 3s ease-in-out infinite;
+  transform: scale(1.05);
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: transform 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 6px;
+  bottom: 4px;
+  transition: 0.4s;
+  background-image: url('/icons/theme.svg');
+  background-repeat: no-repeat;
+  background-size: 200% 100%;
+  background-position: left center;
+  border-radius: 50%;
+}
+
+.slider:hover {
+  outline: #4a90d9 solid 2px;
+  transition: outline .1s;
+}
+
+input:checked + .slider {
+  background-color: var(--block-bg-dark);
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+  background-position: right center;
+  filter: invert(1);
+}
+</style>
+
+<header
+  class="header fixed top-0 z-40 mx-auto min-h-[3.5rem] w-full"
+>
+  <div class="mx-auto w-full max-w-5xl p-3 flex items-center justify-center relative">
+
+      <!-- Center: Name + Nav -->
+      <div class="flex items-center gap-10">
+        <a style="display: block; margin-top: -6px; margin-right: 2rem;" class="title-hover text-2xl font-semibold" href="https://lorisdrid.fr">Loris Drid</a>
+        
+        <nav class="hidden lg:flex items-center">
+          <ul class="flex flex-row">
+            
+            
+            
+            
+            <li>
+              <a
+                class="primary-link block text-lg font-medium px-5 py-3"
+                href="https://lorisdrid.fr/portfolio"
+                data-i18n="nav.projects"
+              >📂 Projects</a>
+            </li>
+            
+            
+            
+            
+            <li>
+              <a
+                class="primary-link block text-lg font-medium px-5 py-3"
+                href="https://lorisdrid.fr/about"
+                data-i18n="nav.about"
+              >ℹ️ About Me</a>
+            </li>
+            
+          </ul>
+        </nav>
+        
+      </div>
+
+      <!-- Right: mobile menu btn + toggle (absolute right) -->
+      <div style="position: fixed; right: 1.5rem; top: 0.75rem; z-index: 50;" class="flex items-center gap-3">
+        
+        <div class="flex relative justify-center gap-2.5 lg:hidden items-end">
+          <a class="text-1xl font-semibold">Menu</a>
+          <div
+            class="btn-menu flex relative justify-center flex-col z-50 gap-2.5 cursor-pointer h-8 w-8 shrink-0 items-center"
+            role="button"
+            aria-label="Menu"
+          ></div>
+        </div>
+        
+        <div style="display: flex; gap: 4px; margin-right: 12px;" id="lang-switcher">
+          <button onclick="switchLang('en')" id="lang-en" style="cursor: pointer; border: 2px solid transparent; border-radius: 3px; padding: 1px; background: none; transition: border-color 0.15s ease;">
+            <img src="https://flagcdn.com/w40/gb.png" alt="English" style="width: 28px; height: 18px; display: block; border-radius: 2px;" />
+          </button>
+          <button onclick="switchLang('fr')" id="lang-fr" style="cursor: pointer; border: 2px solid transparent; border-radius: 3px; padding: 1px; background: none; transition: border-color 0.15s ease;">
+            <img src="https://flagcdn.com/w40/fr.png" alt="Français" style="width: 28px; height: 18px; display: block; border-radius: 2px;" />
+          </button>
+        </div>
+        <label class="switch btn-dark h-6 w-6" aria-label="Theme toggle">
+          <input type="checkbox" id="theme-toggle" />
+          <span class="slider round"></span>
+        </label>
+      </div>
+    </div>
+
+    <script>
+      const htmlClass = document.documentElement.classList;
+      const darkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+      const themeToggle = document.getElementById("theme-toggle");
+
+      const setDark = (isDark) => {
+        if (isDark) {
+          htmlClass.add("dark");
+          document.body.dispatchEvent(new CustomEvent("set-theme", { detail: "dark" }));
+        } else {
+          htmlClass.remove("dark");
+          document.body.dispatchEvent(new CustomEvent("set-theme", { detail: "light" }));
+        }
+        localStorage.setItem("dark", isDark);
+        themeToggle.checked = isDark;
+      };
+
+      setTimeout(() => htmlClass.remove("not-ready"), 10);
+      const stored = localStorage.getItem("dark");
+      const prefersDark = stored ? stored === "true" : darkScheme.matches;
+      setDark(prefersDark);
+
+      darkScheme.addEventListener("change", (e) => {
+        const stored = localStorage.getItem("dark");
+        if (stored === null) setDark(e.matches);
+      });
+
+      themeToggle.addEventListener("change", () => {
+        setDark(themeToggle.checked);
+      });
+
+      const btnMenu = document.querySelector(".btn-menu");
+      btnMenu?.addEventListener("click", () => htmlClass.toggle("open"));
+    </script>
+
+    <!-- Mobile nav (hidden by default, shown when .open is on html) -->
+    
+    <nav class="lg:hidden">
+      <ul class="nav-wrapper flex w-full flex-col py-2">
+        
+        <li>
+          <a
+            class="primary-link block py-3 text-center text-lg font-medium"
+            href="https://lorisdrid.fr/portfolio"
+          >📂 Projects</a>
+        </li>
+        
+        <li>
+          <a
+            class="primary-link block py-3 text-center text-lg font-medium"
+            href="https://lorisdrid.fr/about"
+          >ℹ️ About Me</a>
+        </li>
+        
+      </ul>
+    </nav>
+    
+  </div>
+</header>
+
+
+    
+
+    <main
+      class="prose prose-neutral dark:prose-invert prose-pre:rounded-lg prose-img:rounded-lg relative mx-auto min-h-[calc(100vh-9rem)] max-w-3xl px-4 pt-24 pb-16 break-words lg:pt-32"
+    >
+      
+<h1 class="mb-16">Tags</h1>
+<div class="not-prose grid grid-cols-1 gap-4 md:grid-cols-2">
+  
+  <div class="block-bg flex h-full flex-col rounded-lg px-5 pb-2 md:min-h-[18rem]">
+    <h3 class="my-4 text-xl font-bold text-black dark:text-white">
+      <a class="primary-link" href="https:&#x2F;&#x2F;lorisdrid.fr&#x2F;tags&#x2F;academic&#x2F;"> #Academic </a>
+      <sup class="opacity-60">5</sup>
+    </h3>
+
+    
+    <a class="secondary-link my-0.5" href="https:&#x2F;&#x2F;lorisdrid.fr&#x2F;portfolio&#x2F;per-muvin&#x2F;">🎨 PER-MUVIN — Looted Art Visualization</a>
+    
+    <a class="secondary-link my-0.5" href="https:&#x2F;&#x2F;lorisdrid.fr&#x2F;portfolio&#x2F;its-magic&#x2F;">🪄 It&#x27;s Magic — Multi-Device Multiplayer Game</a>
+    
+    <a class="secondary-link my-0.5" href="https:&#x2F;&#x2F;lorisdrid.fr&#x2F;portfolio&#x2F;arvard&#x2F;">🧭 ARVARD — AR Campus Navigation</a>
+    
+    <a class="secondary-link my-0.5" href="https:&#x2F;&#x2F;lorisdrid.fr&#x2F;portfolio&#x2F;quanridor&#x2F;">♟️ Quanridor — Multiplayer Board Game</a>
+    
+    <a class="secondary-link my-0.5" href="https:&#x2F;&#x2F;lorisdrid.fr&#x2F;portfolio&#x2F;zqsd&#x2F;">🧠 ZQSD — Cognitive Accessibility Quiz</a>
+    
+
+    
+  </div>
+  
+  <div class="block-bg flex h-full flex-col rounded-lg px-5 pb-2 md:min-h-[18rem]">
+    <h3 class="my-4 text-xl font-bold text-black dark:text-white">
+      <a class="primary-link" href="https:&#x2F;&#x2F;lorisdrid.fr&#x2F;tags&#x2F;accessibility&#x2F;"> #Accessibility </a>
+      <sup class="opacity-60">1</sup>
+    </h3>
+
+    
+    <a class="secondary-link my-0.5" href="https:&#x2F;&#x2F;lorisdrid.fr&#x2F;portfolio&#x2F;zqsd&#x2F;">🧠 ZQSD — Cognitive Accessibility Quiz</a>
+    
+
+    
+  </div>
+  
+  <div class="block-bg flex h-full flex-col rounded-lg px-5 pb-2 md:min-h-[18rem]">
+    <h3 class="my-4 text-xl font-bold text-black dark:text-white">
+      <a class="primary-link" href="https:&#x2F;&#x2F;lorisdrid.fr&#x2F;tags&#x2F;ai&#x2F;"> #AI </a>
+      <sup class="opacity-60">1</sup>
+    </h3>
+
+    
+    <a class="secondary-link my-0.5" href="https:&#x2F;&#x2F;lorisdrid.fr&#x2F;portfolio&#x2F;apply-board&#x2F;">📋 ApplyBoard — Job Application Tracker</a>
+    
+
+    
+  </div>
+  
+  <div class="block-bg flex h-full flex-col rounded-lg px-5 pb-2 md:min-h-[18rem]">
+    <h3 class="my-4 text-xl font-bold text-black dark:text-white">
+      <a class="primary-link" href="https:&#x2F;&#x2F;lorisdrid.fr&#x2F;tags&#x2F;android&#x2F;"> #Android </a>
+      <sup class="opacity-60">1</sup>
+    </h3>
+
+    
+    <a class="secondary-link my-0.5" href="https:&#x2F;&#x2F;lorisdrid.fr&#x2F;portfolio&#x2F;its-magic&#x2F;">🪄 It&#x27;s Magic — Multi-Device Multiplayer Game</a>
+    
+
+    
+  </div>
+  
+  <div class="block-bg flex h-full flex-col rounded-lg px-5 pb-2 md:min-h-[18rem]">
+    <h3 class="my-4 text-xl font-bold text-black dark:text-white">
+      <a class="primary-link" href="https:&#x2F;&#x2F;lorisdrid.fr&#x2F;tags&#x2F;angular&#x2F;"> #Angular </a>
+      <sup class="opacity-60">1</sup>
+    </h3>
+
+    
+    <a class="secondary-link my-0.5" href="https:&#x2F;&#x2F;lorisdrid.fr&#x2F;portfolio&#x2F;zqsd&#x2F;">🧠 ZQSD — Cognitive Accessibility Quiz</a>
+    
+
+    
+  </div>
+  
+  <div class="block-bg flex h-full flex-col rounded-lg px-5 pb-2 md:min-h-[18rem]">
+    <h3 class="my-4 text-xl font-bold text-black dark:text-white">
+      <a class="primary-link" href="https:&#x2F;&#x2F;lorisdrid.fr&#x2F;tags&#x2F;ar&#x2F;"> #AR </a>
+      <sup class="opacity-60">1</sup>
+    </h3>
+
+    
+    <a class="secondary-link my-0.5" href="https:&#x2F;&#x2F;lorisdrid.fr&#x2F;portfolio&#x2F;arvard&#x2F;">🧭 ARVARD — AR Campus Navigation</a>
+    
+
+    
+  </div>
+  
+  <div class="block-bg flex h-full flex-col rounded-lg px-5 pb-2 md:min-h-[18rem]">
+    <h3 class="my-4 text-xl font-bold text-black dark:text-white">
+      <a class="primary-link" href="https:&#x2F;&#x2F;lorisdrid.fr&#x2F;tags&#x2F;c&#x2F;"> #C# </a>
+      <sup class="opacity-60">1</sup>
+    </h3>
+
+    
+    <a class="secondary-link my-0.5" href="https:&#x2F;&#x2F;lorisdrid.fr&#x2F;portfolio&#x2F;its-magic&#x2F;">🪄 It&#x27;s Magic — Multi-Device Multiplayer Game</a>
+    
+
+    
+  </div>
+  
+  <div class="block-bg flex h-full flex-col rounded-lg px-5 pb-2 md:min-h-[18rem]">
+    <h3 class="my-4 text-xl font-bold text-black dark:text-white">
+      <a class="primary-link" href="https:&#x2F;&#x2F;lorisdrid.fr&#x2F;tags&#x2F;computer-vision&#x2F;"> #Computer Vision </a>
+      <sup class="opacity-60">1</sup>
+    </h3>
+
+    
+    <a class="secondary-link my-0.5" href="https:&#x2F;&#x2F;lorisdrid.fr&#x2F;portfolio&#x2F;manga-ocr-translator&#x2F;">📖 Manga OCR Translator</a>
+    
+
+    
+  </div>
+  
+  <div class="block-bg flex h-full flex-col rounded-lg px-5 pb-2 md:min-h-[18rem]">
+    <h3 class="my-4 text-xl font-bold text-black dark:text-white">
+      <a class="primary-link" href="https:&#x2F;&#x2F;lorisdrid.fr&#x2F;tags&#x2F;d3-js&#x2F;"> #D3.js </a>
+      <sup class="opacity-60">1</sup>
+    </h3>
+
+    
+    <a class="secondary-link my-0.5" href="https:&#x2F;&#x2F;lorisdrid.fr&#x2F;portfolio&#x2F;per-muvin&#x2F;">🎨 PER-MUVIN — Looted Art Visualization</a>
+    
+
+    
+  </div>
+  
+  <div class="block-bg flex h-full flex-col rounded-lg px-5 pb-2 md:min-h-[18rem]">
+    <h3 class="my-4 text-xl font-bold text-black dark:text-white">
+      <a class="primary-link" href="https:&#x2F;&#x2F;lorisdrid.fr&#x2F;tags&#x2F;data-visualization&#x2F;"> #Data Visualization </a>
+      <sup class="opacity-60">1</sup>
+    </h3>
+
+    
+    <a class="secondary-link my-0.5" href="https:&#x2F;&#x2F;lorisdrid.fr&#x2F;portfolio&#x2F;per-muvin&#x2F;">🎨 PER-MUVIN — Looted Art Visualization</a>
+    
+
+    
+  </div>
+  
+  <div class="block-bg flex h-full flex-col rounded-lg px-5 pb-2 md:min-h-[18rem]">
+    <h3 class="my-4 text-xl font-bold text-black dark:text-white">
+      <a class="primary-link" href="https:&#x2F;&#x2F;lorisdrid.fr&#x2F;tags&#x2F;game&#x2F;"> #Game </a>
+      <sup class="opacity-60">2</sup>
+    </h3>
+
+    
+    <a class="secondary-link my-0.5" href="https:&#x2F;&#x2F;lorisdrid.fr&#x2F;portfolio&#x2F;its-magic&#x2F;">🪄 It&#x27;s Magic — Multi-Device Multiplayer Game</a>
+    
+    <a class="secondary-link my-0.5" href="https:&#x2F;&#x2F;lorisdrid.fr&#x2F;portfolio&#x2F;quanridor&#x2F;">♟️ Quanridor — Multiplayer Board Game</a>
+    
+
+    
+  </div>
+  
+  <div class="block-bg flex h-full flex-col rounded-lg px-5 pb-2 md:min-h-[18rem]">
+    <h3 class="my-4 text-xl font-bold text-black dark:text-white">
+      <a class="primary-link" href="https:&#x2F;&#x2F;lorisdrid.fr&#x2F;tags&#x2F;geolocation&#x2F;"> #Geolocation </a>
+      <sup class="opacity-60">1</sup>
+    </h3>
+
+    
+    <a class="secondary-link my-0.5" href="https:&#x2F;&#x2F;lorisdrid.fr&#x2F;portfolio&#x2F;arvard&#x2F;">🧭 ARVARD — AR Campus Navigation</a>
+    
+
+    
+  </div>
+  
+  <div class="block-bg flex h-full flex-col rounded-lg px-5 pb-2 md:min-h-[18rem]">
+    <h3 class="my-4 text-xl font-bold text-black dark:text-white">
+      <a class="primary-link" href="https:&#x2F;&#x2F;lorisdrid.fr&#x2F;tags&#x2F;gmail-api&#x2F;"> #Gmail API </a>
+      <sup class="opacity-60">1</sup>
+    </h3>
+
+    
+    <a class="secondary-link my-0.5" href="https:&#x2F;&#x2F;lorisdrid.fr&#x2F;portfolio&#x2F;apply-board&#x2F;">📋 ApplyBoard — Job Application Tracker</a>
+    
+
+    
+  </div>
+  
+  <div class="block-bg flex h-full flex-col rounded-lg px-5 pb-2 md:min-h-[18rem]">
+    <h3 class="my-4 text-xl font-bold text-black dark:text-white">
+      <a class="primary-link" href="https:&#x2F;&#x2F;lorisdrid.fr&#x2F;tags&#x2F;html-css&#x2F;"> #HTML&#x2F;CSS </a>
+      <sup class="opacity-60">1</sup>
+    </h3>
+
+    
+    <a class="secondary-link my-0.5" href="https:&#x2F;&#x2F;lorisdrid.fr&#x2F;portfolio&#x2F;quanridor&#x2F;">♟️ Quanridor — Multiplayer Board Game</a>
+    
+
+    
+  </div>
+  
+  <div class="block-bg flex h-full flex-col rounded-lg px-5 pb-2 md:min-h-[18rem]">
+    <h3 class="my-4 text-xl font-bold text-black dark:text-white">
+      <a class="primary-link" href="https:&#x2F;&#x2F;lorisdrid.fr&#x2F;tags&#x2F;html-scss&#x2F;"> #HTML&#x2F;SCSS </a>
+      <sup class="opacity-60">1</sup>
+    </h3>
+
+    
+    <a class="secondary-link my-0.5" href="https:&#x2F;&#x2F;lorisdrid.fr&#x2F;portfolio&#x2F;zqsd&#x2F;">🧠 ZQSD — Cognitive Accessibility Quiz</a>
+    
+
+    
+  </div>
+  
+  <div class="block-bg flex h-full flex-col rounded-lg px-5 pb-2 md:min-h-[18rem]">
+    <h3 class="my-4 text-xl font-bold text-black dark:text-white">
+      <a class="primary-link" href="https:&#x2F;&#x2F;lorisdrid.fr&#x2F;tags&#x2F;javascript&#x2F;"> #JavaScript </a>
+      <sup class="opacity-60">2</sup>
+    </h3>
+
+    
+    <a class="secondary-link my-0.5" href="https:&#x2F;&#x2F;lorisdrid.fr&#x2F;portfolio&#x2F;its-magic&#x2F;">🪄 It&#x27;s Magic — Multi-Device Multiplayer Game</a>
+    
+    <a class="secondary-link my-0.5" href="https:&#x2F;&#x2F;lorisdrid.fr&#x2F;portfolio&#x2F;quanridor&#x2F;">♟️ Quanridor — Multiplayer Board Game</a>
+    
+
+    
+  </div>
+  
+  <div class="block-bg flex h-full flex-col rounded-lg px-5 pb-2 md:min-h-[18rem]">
+    <h3 class="my-4 text-xl font-bold text-black dark:text-white">
+      <a class="primary-link" href="https:&#x2F;&#x2F;lorisdrid.fr&#x2F;tags&#x2F;machine-translation&#x2F;"> #Machine Translation </a>
+      <sup class="opacity-60">1</sup>
+    </h3>
+
+    
+    <a class="secondary-link my-0.5" href="https:&#x2F;&#x2F;lorisdrid.fr&#x2F;portfolio&#x2F;manga-ocr-translator&#x2F;">📖 Manga OCR Translator</a>
+    
+
+    
+  </div>
+  
+  <div class="block-bg flex h-full flex-col rounded-lg px-5 pb-2 md:min-h-[18rem]">
+    <h3 class="my-4 text-xl font-bold text-black dark:text-white">
+      <a class="primary-link" href="https:&#x2F;&#x2F;lorisdrid.fr&#x2F;tags&#x2F;multiplayer&#x2F;"> #Multiplayer </a>
+      <sup class="opacity-60">2</sup>
+    </h3>
+
+    
+    <a class="secondary-link my-0.5" href="https:&#x2F;&#x2F;lorisdrid.fr&#x2F;portfolio&#x2F;its-magic&#x2F;">🪄 It&#x27;s Magic — Multi-Device Multiplayer Game</a>
+    
+    <a class="secondary-link my-0.5" href="https:&#x2F;&#x2F;lorisdrid.fr&#x2F;portfolio&#x2F;quanridor&#x2F;">♟️ Quanridor — Multiplayer Board Game</a>
+    
+
+    
+  </div>
+  
+  <div class="block-bg flex h-full flex-col rounded-lg px-5 pb-2 md:min-h-[18rem]">
+    <h3 class="my-4 text-xl font-bold text-black dark:text-white">
+      <a class="primary-link" href="https:&#x2F;&#x2F;lorisdrid.fr&#x2F;tags&#x2F;network-analysis&#x2F;"> #Network Analysis </a>
+      <sup class="opacity-60">1</sup>
+    </h3>
+
+    
+    <a class="secondary-link my-0.5" href="https:&#x2F;&#x2F;lorisdrid.fr&#x2F;portfolio&#x2F;per-muvin&#x2F;">🎨 PER-MUVIN — Looted Art Visualization</a>
+    
+
+    
+  </div>
+  
+  <div class="block-bg flex h-full flex-col rounded-lg px-5 pb-2 md:min-h-[18rem]">
+    <h3 class="my-4 text-xl font-bold text-black dark:text-white">
+      <a class="primary-link" href="https:&#x2F;&#x2F;lorisdrid.fr&#x2F;tags&#x2F;next-js&#x2F;"> #Next.js </a>
+      <sup class="opacity-60">1</sup>
+    </h3>
+
+    
+    <a class="secondary-link my-0.5" href="https:&#x2F;&#x2F;lorisdrid.fr&#x2F;portfolio&#x2F;apply-board&#x2F;">📋 ApplyBoard — Job Application Tracker</a>
+    
+
+    
+  </div>
+  
+  <div class="block-bg flex h-full flex-col rounded-lg px-5 pb-2 md:min-h-[18rem]">
+    <h3 class="my-4 text-xl font-bold text-black dark:text-white">
+      <a class="primary-link" href="https:&#x2F;&#x2F;lorisdrid.fr&#x2F;tags&#x2F;ocr&#x2F;"> #OCR </a>
+      <sup class="opacity-60">1</sup>
+    </h3>
+
+    
+    <a class="secondary-link my-0.5" href="https:&#x2F;&#x2F;lorisdrid.fr&#x2F;portfolio&#x2F;manga-ocr-translator&#x2F;">📖 Manga OCR Translator</a>
+    
+
+    
+  </div>
+  
+  <div class="block-bg flex h-full flex-col rounded-lg px-5 pb-2 md:min-h-[18rem]">
+    <h3 class="my-4 text-xl font-bold text-black dark:text-white">
+      <a class="primary-link" href="https:&#x2F;&#x2F;lorisdrid.fr&#x2F;tags&#x2F;postgresql&#x2F;"> #PostgreSQL </a>
+      <sup class="opacity-60">1</sup>
+    </h3>
+
+    
+    <a class="secondary-link my-0.5" href="https:&#x2F;&#x2F;lorisdrid.fr&#x2F;portfolio&#x2F;apply-board&#x2F;">📋 ApplyBoard — Job Application Tracker</a>
+    
+
+    
+  </div>
+  
+  <div class="block-bg flex h-full flex-col rounded-lg px-5 pb-2 md:min-h-[18rem]">
+    <h3 class="my-4 text-xl font-bold text-black dark:text-white">
+      <a class="primary-link" href="https:&#x2F;&#x2F;lorisdrid.fr&#x2F;tags&#x2F;python&#x2F;"> #Python </a>
+      <sup class="opacity-60">1</sup>
+    </h3>
+
+    
+    <a class="secondary-link my-0.5" href="https:&#x2F;&#x2F;lorisdrid.fr&#x2F;portfolio&#x2F;manga-ocr-translator&#x2F;">📖 Manga OCR Translator</a>
+    
+
+    
+  </div>
+  
+  <div class="block-bg flex h-full flex-col rounded-lg px-5 pb-2 md:min-h-[18rem]">
+    <h3 class="my-4 text-xl font-bold text-black dark:text-white">
+      <a class="primary-link" href="https:&#x2F;&#x2F;lorisdrid.fr&#x2F;tags&#x2F;typescript&#x2F;"> #TypeScript </a>
+      <sup class="opacity-60">2</sup>
+    </h3>
+
+    
+    <a class="secondary-link my-0.5" href="https:&#x2F;&#x2F;lorisdrid.fr&#x2F;portfolio&#x2F;apply-board&#x2F;">📋 ApplyBoard — Job Application Tracker</a>
+    
+    <a class="secondary-link my-0.5" href="https:&#x2F;&#x2F;lorisdrid.fr&#x2F;portfolio&#x2F;zqsd&#x2F;">🧠 ZQSD — Cognitive Accessibility Quiz</a>
+    
+
+    
+  </div>
+  
+  <div class="block-bg flex h-full flex-col rounded-lg px-5 pb-2 md:min-h-[18rem]">
+    <h3 class="my-4 text-xl font-bold text-black dark:text-white">
+      <a class="primary-link" href="https:&#x2F;&#x2F;lorisdrid.fr&#x2F;tags&#x2F;unity&#x2F;"> #Unity </a>
+      <sup class="opacity-60">2</sup>
+    </h3>
+
+    
+    <a class="secondary-link my-0.5" href="https:&#x2F;&#x2F;lorisdrid.fr&#x2F;portfolio&#x2F;its-magic&#x2F;">🪄 It&#x27;s Magic — Multi-Device Multiplayer Game</a>
+    
+    <a class="secondary-link my-0.5" href="https:&#x2F;&#x2F;lorisdrid.fr&#x2F;portfolio&#x2F;arvard&#x2F;">🧭 ARVARD — AR Campus Navigation</a>
+    
+
+    
+  </div>
+  
+  <div class="block-bg flex h-full flex-col rounded-lg px-5 pb-2 md:min-h-[18rem]">
+    <h3 class="my-4 text-xl font-bold text-black dark:text-white">
+      <a class="primary-link" href="https:&#x2F;&#x2F;lorisdrid.fr&#x2F;tags&#x2F;ux-design&#x2F;"> #UX Design </a>
+      <sup class="opacity-60">1</sup>
+    </h3>
+
+    
+    <a class="secondary-link my-0.5" href="https:&#x2F;&#x2F;lorisdrid.fr&#x2F;portfolio&#x2F;arvard&#x2F;">🧭 ARVARD — AR Campus Navigation</a>
+    
+
+    
+  </div>
+  
+</div>
+
+    </main>
+    
+    <footer class="mx-auto flex max-w-3xl flex-wrap items-center px-8 py-4 text-sm opacity-60">
+  <div class="mr-auto basis-full lg:basis-1/2">
+    
+    
+    &copy; 2025 - 2026
+    
+    <a class="link" href="https://lorisdrid.fr">
+      Loris Drid
+    </a>
+     |
+    
+    <a class="link" href="https:&#x2F;&#x2F;github.com&#x2F;lorisdrid&#x2F;lorisdrid.github.io&#x2F;blob&#x2F;main&#x2F;LICENSE" rel="noopener" target="_blank">
+      MIT License
+    </a>
+    
+    
+  </div>
+  <div class="flex basis-full lg:basis-1/2 lg:justify-end">
+    <a class="link mr-6 lg:ml-6" href="https://www.getzola.org/" rel="noopener" target="_blank">
+      Powered by Zola
+    </a>
+  </div>
+  
+</footer>
+
+    
+  </body>
+</html>

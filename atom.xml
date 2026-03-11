@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Loris Drid</title>
+    <subtitle>Loris Drid&#x27;s Personal Website</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://lorisdrid.fr/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://lorisdrid.fr"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2026-02-09T00:00:00+00:00</updated>
+    <id>https://lorisdrid.fr/atom.xml</id>
+    <entry xml:lang="en">
+        <title>📋 ApplyBoard — Job Application Tracker</title>
+        <published>2026-02-09T00:00:00+00:00</published>
+        <updated>2026-02-09T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Loris Drid
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://lorisdrid.fr/portfolio/apply-board/"/>
+        <id>https://lorisdrid.fr/portfolio/apply-board/</id>
+        
+        <content type="html" xml:base="https://lorisdrid.fr/portfolio/apply-board/"></content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>📖 Manga OCR Translator</title>
+        <published>2025-12-27T00:00:00+00:00</published>
+        <updated>2025-12-27T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Loris Drid
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://lorisdrid.fr/portfolio/manga-ocr-translator/"/>
+        <id>https://lorisdrid.fr/portfolio/manga-ocr-translator/</id>
+        
+        <content type="html" xml:base="https://lorisdrid.fr/portfolio/manga-ocr-translator/"></content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>🎨 PER-MUVIN — Looted Art Visualization</title>
+        <published>2025-02-04T00:00:00+00:00</published>
+        <updated>2025-02-04T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Loris Drid
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://lorisdrid.fr/portfolio/per-muvin/"/>
+        <id>https://lorisdrid.fr/portfolio/per-muvin/</id>
+        
+        <content type="html" xml:base="https://lorisdrid.fr/portfolio/per-muvin/"></content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>🪄 It&#x27;s Magic — Multi-Device Multiplayer Game</title>
+        <published>2025-01-20T00:00:00+00:00</published>
+        <updated>2025-01-20T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Loris Drid
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://lorisdrid.fr/portfolio/its-magic/"/>
+        <id>https://lorisdrid.fr/portfolio/its-magic/</id>
+        
+        <content type="html" xml:base="https://lorisdrid.fr/portfolio/its-magic/"></content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>🧭 ARVARD — AR Campus Navigation</title>
+        <published>2024-12-18T00:00:00+00:00</published>
+        <updated>2024-12-18T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Loris Drid
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://lorisdrid.fr/portfolio/arvard/"/>
+        <id>https://lorisdrid.fr/portfolio/arvard/</id>
+        
+        <content type="html" xml:base="https://lorisdrid.fr/portfolio/arvard/"></content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>♟️ Quanridor — Multiplayer Board Game</title>
+        <published>2024-04-26T00:00:00+00:00</published>
+        <updated>2024-04-26T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Loris Drid
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://lorisdrid.fr/portfolio/quanridor/"/>
+        <id>https://lorisdrid.fr/portfolio/quanridor/</id>
+        
+        <content type="html" xml:base="https://lorisdrid.fr/portfolio/quanridor/"></content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>🧠 ZQSD — Cognitive Accessibility Quiz</title>
+        <published>2024-03-15T00:00:00+00:00</published>
+        <updated>2024-03-15T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Loris Drid
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://lorisdrid.fr/portfolio/zqsd/"/>
+        <id>https://lorisdrid.fr/portfolio/zqsd/</id>
+        
+        <content type="html" xml:base="https://lorisdrid.fr/portfolio/zqsd/"></content>
+        
+    </entry>
+</feed>
