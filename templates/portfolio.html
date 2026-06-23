@@ -1,11 +1,38 @@
 {% import "macros.html" as macros %}
-{% extends "index.html" %}
+{% extends "base.html" %}
 
-{% block main %}
+{% block content %}
+<main class="page-wide">
 
-<h1 class="mb-16" data-i18n-switch data-i18n-en="Portfolio" data-i18n-fr="Projets">{{ section.title }}</h1>
+  <div class="page-head">
+    <p class="page-eyeline" data-i18n-switch data-i18n-en="// Portfolio" data-i18n-fr="// Projets">// Portfolio</p>
+    <h1 class="page-title" data-i18n-switch data-i18n-en="Projects" data-i18n-fr="Projets">{{ section.title }}</h1>
+    <p class="page-sub" data-i18n-switch
+      data-i18n-en="A selection of things I've designed and built — full-stack apps, games, data visualizations and experiments."
+      data-i18n-fr="Une sélection de ce que j'ai conçu et développé — applications full-stack, jeux, visualisations de données et expérimentations.">
+      A selection of things I've designed and built — full-stack apps, games, data visualizations and experiments.
+    </p>
+  </div>
 
-{% set pages = section.pages %}
-{% include "partials/page_list.html" %}
+  <div class="feat-grid">
+    {% for page in section.pages %}
+    <a class="feat-card" href="{{ page.permalink }}">
+      {% if page.extra.thumbnail or page.extra.cover.image %}
+      <div class="feat-thumb">
+        <img src="{{ get_url(path=page.extra.thumbnail | default(value=page.extra.cover.image)) }}" alt="{{ page.title }}" loading="lazy" />
+      </div>
+      {% endif %}
+      <div class="feat-body">
+        <div class="feat-meta">
+          {% if page.taxonomies.tags %}<span class="feat-tag">{{ page.taxonomies.tags.0 }}</span>{% endif %}
+          <span class="feat-date">{{ page.date | date(format="%b %Y") }}</span>
+        </div>
+        <h3 class="feat-title" data-i18n-switch data-i18n-en="{{ page.title }}" data-i18n-fr="{{ page.extra.title_fr | default(value=page.title) }}">{{ page.title }}</h3>
+        <p class="feat-desc" data-i18n-switch data-i18n-en="{{ page.description }}" data-i18n-fr="{{ page.extra.description_fr | default(value=page.description) }}">{{ page.description }}</p>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
 
-{% endblock main %}
+</main>
+{% endblock content %}

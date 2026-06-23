@@ -42,8 +42,8 @@
   function updateFlagHighlight() {
     const enBtn = document.getElementById('lang-en');
     const frBtn = document.getElementById('lang-fr');
-    if (enBtn) { enBtn.style.borderColor = currentLang === 'en' ? '#4a90d9' : 'transparent'; enBtn.style.opacity = currentLang === 'en' ? '1' : '0.5'; }
-    if (frBtn) { frBtn.style.borderColor = currentLang === 'fr' ? '#4a90d9' : 'transparent'; frBtn.style.opacity = currentLang === 'fr' ? '1' : '0.5'; }
+    if (enBtn) { enBtn.style.borderColor = currentLang === 'en' ? '#6366f1' : 'transparent'; enBtn.style.opacity = currentLang === 'en' ? '1' : '0.5'; }
+    if (frBtn) { frBtn.style.borderColor = currentLang === 'fr' ? '#6366f1' : 'transparent'; frBtn.style.opacity = currentLang === 'fr' ? '1' : '0.5'; }
   }
 
   function switchLang(lang) {

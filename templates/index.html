@@ -1,52 +1,116 @@
 {% import "macros.html" as macros %}
-<!doctype html>
-<html class="not-ready lg:text-base" lang="{{ lang }}">
-  {% include "partials/head.html" %}
-  <body class="text-black duration-200 ease-out dark:text-white">
-    {% include "partials/header.html" %}
+{% extends "base.html" %}
 
-    {% include "injects/body_start.html" ignore missing %}
+{% block content %}
+<main class="home">
 
-    <main
-      class="prose prose-neutral dark:prose-invert prose-pre:rounded-lg prose-img:rounded-lg relative mx-auto min-h-[calc(100vh-9rem)] max-w-3xl px-4 pt-24 pb-16 break-words lg:pt-32"
-    >
-      {% block main %}
+  <!-- ===== HERO ===== -->
+  <section class="home-hero">
+    <div class="hero-text">
+      <p class="hero-eyeline" data-i18n-switch data-i18n-en="// Software Engineer · AI Integration" data-i18n-fr="// Ingénieur logiciel · Intégration IA">// Software Engineer · AI Integration</p>
 
-      {% if paginator is undefined or paginator.current_index == 1 %}
-      {% include "partials/profile.html" %}
-      {% endif %}
+      <h1 class="hero-title" data-i18n-switch
+        data-i18n-en="I build full-stack products and integrate AI into them."
+        data-i18n-fr="Je conçois des produits full-stack et j'y intègre l'IA.">
+        I build full-stack products and integrate AI into them.
+      </h1>
 
-      <!-- What I Do -->
-      <h2 data-i18n="home.what_i_do">🚀 What I Do</h2>
-      <div class="not-prose" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem;">
-        <div class="experience-card" style="text-align: center; padding: 1.5rem;">
-          <div style="font-size: 2rem; margin-bottom: 0.5rem;">⚙️</div>
-          <h3 class="card-title" style="font-size: 1rem; margin-bottom: 0.5rem;" data-i18n="home.fullstack_title">Full-Stack Dev</h3>
-          <p style="color: var(--text-secondary); font-size: 0.85rem; margin: 0;" data-i18n="home.fullstack_desc">Building web apps with React, Spring Boot, Node.js and modern frameworks.</p>
-        </div>
-        <div class="experience-card" style="text-align: center; padding: 1.5rem;">
-          <div style="font-size: 2rem; margin-bottom: 0.5rem;">🎨</div>
-          <h3 class="card-title" style="font-size: 1rem; margin-bottom: 0.5rem;" data-i18n="home.uiux_title">UI/UX Design</h3>
-          <p style="color: var(--text-secondary); font-size: 0.85rem; margin: 0;" data-i18n="home.uiux_desc">Crafting intuitive interfaces with Figma, prototyping and user research.</p>
-        </div>
-        <div class="experience-card" style="text-align: center; padding: 1.5rem;">
-          <div style="font-size: 2rem; margin-bottom: 0.5rem;">📊</div>
-          <h3 class="card-title" style="font-size: 1rem; margin-bottom: 0.5rem;" data-i18n="home.data_title">Data & Visualization</h3>
-          <p style="color: var(--text-secondary); font-size: 0.85rem; margin: 0;" data-i18n="home.data_desc">Turning complex data into clear, interactive visualizations with D3.js and Python.</p>
-        </div>
+      <p class="hero-sub" data-i18n-switch
+        data-i18n-en="Polytech Nice graduate. I turn complex problems into well-built web apps — and embed AI features that make them genuinely useful, from prototype to production."
+        data-i18n-fr="Diplômé de Polytech Nice. Je transforme des problèmes complexes en applications web solides — et j'y intègre des fonctionnalités IA réellement utiles, du prototype à la production.">
+        Polytech Nice graduate. I turn complex problems into well-built web apps — and embed AI features that make them genuinely useful, from prototype to production.
+      </p>
+
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="{{ get_url(path='portfolio') }}" data-i18n-switch data-i18n-en="View projects" data-i18n-fr="Voir les projets">View projects</a>
+        <a class="btn btn-ghost" href="/CV_LORIS_DRID.pdf" download data-i18n-switch data-i18n-en="Download CV" data-i18n-fr="Télécharger le CV">Download CV</a>
       </div>
 
-      <!-- CV Download -->
-      <div class="not-prose" style="text-align: center; margin-top: 2.5rem;">
-        <a href="/CV_LORIS_DRID.pdf" download style="display: inline-flex; align-items: center; gap: 0.5rem; background: var(--accent); color: #fff; padding: 0.75rem 1.5rem; border-radius: 0.5rem; font-weight: 600; text-decoration: none; transition: opacity 0.15s ease;" data-i18n="home.download_cv">
-          📄 Download my CV
-        </a>
-      </div>
+      <ul class="hero-stack">
+        {% for t in ["React", "TypeScript", "Node.js", "Spring Boot", "Python", "LLM APIs"] %}
+        <li>{{ t }}</li>
+        {% endfor %}
+      </ul>
+    </div>
 
-      {% endblock main %}
-    </main>
-    
-    {% include "partials/footer.html" %}
-    {% include "injects/body_end.html" ignore missing %}
-  </body>
-</html>
+    <div class="hero-photo">
+      {% set avatar_webp = config.extra.profile.avatar_url | replace(from=".png", to=".webp") | replace(from=".jpg", to=".webp") %}
+      <picture>
+        <source srcset="{{ get_url(path=avatar_webp) }}" type="image/webp" />
+        <img src="{{ get_url(path=config.extra.profile.avatar_url) }}" alt="Loris Drid" width="320" height="320" loading="eager" decoding="async" />
+      </picture>
+      <div class="hero-socials">
+        {% for social in config.extra.profile.social %}
+        <a class="icon-link h-6 w-6 text-[0px] [background:var(--url)_center_center/cover_no-repeat]"
+           style="--url: url({{ macros::get_social_icon(icon=social.name) }})"
+           href="{{ social.url | replace(from=`$BASE_URL`, to=config.base_url) | safe }}"
+           target="_blank" rel="me">{{ social.name }}</a>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SELECTED WORK ===== -->
+  <section class="home-section">
+    <div class="section-head">
+      <h2 data-i18n-switch data-i18n-en="Selected work" data-i18n-fr="Projets sélectionnés">Selected work</h2>
+      <a class="section-link" href="{{ get_url(path='portfolio') }}" data-i18n-switch data-i18n-en="All projects →" data-i18n-fr="Tous les projets →">All projects →</a>
+    </div>
+
+    {% set portfolio = get_section(path="portfolio/_index.md") %}
+    <div class="feat-grid">
+      {% for page in portfolio.pages | slice(end=3) %}
+      <a class="feat-card" href="{{ page.permalink }}">
+        {% if page.extra.thumbnail or page.extra.cover.image %}
+        <div class="feat-thumb">
+          <img src="{{ get_url(path=page.extra.thumbnail | default(value=page.extra.cover.image)) }}" alt="{{ page.title }}" loading="lazy" />
+        </div>
+        {% endif %}
+        <div class="feat-body">
+          {% if page.taxonomies.tags %}
+          <span class="feat-tag">{{ page.taxonomies.tags.0 }}</span>
+          {% endif %}
+          <h3 class="feat-title" data-i18n-switch data-i18n-en="{{ page.title }}" data-i18n-fr="{{ page.extra.title_fr | default(value=page.title) }}">{{ page.title }}</h3>
+          <p class="feat-desc" data-i18n-switch data-i18n-en="{{ page.description }}" data-i18n-fr="{{ page.extra.description_fr | default(value=page.description) }}">{{ page.description }}</p>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- ===== CAPABILITIES ===== -->
+  <section class="home-section">
+    <div class="section-head">
+      <h2 data-i18n-switch data-i18n-en="What I do" data-i18n-fr="Ce que je fais">What I do</h2>
+    </div>
+    <div class="cap-grid">
+      <div class="cap-card">
+        <span class="cap-index">01</span>
+        <h3 class="cap-title" data-i18n-switch data-i18n-en="Full-Stack Development" data-i18n-fr="Développement Full-Stack">Full-Stack Development</h3>
+        <p class="cap-desc" data-i18n-switch data-i18n-en="Production web apps with React, Spring Boot and Node.js — clean architecture, tested and shipped." data-i18n-fr="Applications web en production avec React, Spring Boot et Node.js — architecture propre, testée et livrée.">Production web apps with React, Spring Boot and Node.js — clean architecture, tested and shipped.</p>
+      </div>
+      <div class="cap-card">
+        <span class="cap-index">02</span>
+        <h3 class="cap-title" data-i18n-switch data-i18n-en="AI Integration" data-i18n-fr="Intégration IA">AI Integration</h3>
+        <p class="cap-desc" data-i18n-switch data-i18n-en="Embedding LLMs and AI features into products — RAG, chat assistants and smart automation, wired cleanly into the stack." data-i18n-fr="Intégration de LLM et de fonctionnalités IA dans les produits — RAG, assistants conversationnels et automatisation, branchés proprement dans la stack.">Embedding LLMs and AI features into products — RAG, chat assistants and smart automation, wired cleanly into the stack.</p>
+      </div>
+      <div class="cap-card">
+        <span class="cap-index">03</span>
+        <h3 class="cap-title" data-i18n-switch data-i18n-en="Data & Visualization" data-i18n-fr="Données & Visualisation">Data &amp; Visualization</h3>
+        <p class="cap-desc" data-i18n-switch data-i18n-en="Turning complex datasets into clear, interactive visualizations with D3.js and Python." data-i18n-fr="Transformer des données complexes en visualisations claires et interactives avec D3.js et Python.">Turning complex datasets into clear, interactive visualizations with D3.js and Python.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT CTA ===== -->
+  <section class="home-cta">
+    <h2 data-i18n-switch data-i18n-en="Let's build something." data-i18n-fr="Construisons quelque chose.">Let's build something.</h2>
+    <p data-i18n-switch data-i18n-en="Open to software engineering & AI roles. Let's talk." data-i18n-fr="Ouvert aux postes en ingénierie logicielle & IA. Discutons-en.">Open to software engineering &amp; AI roles. Let's talk.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="mailto:lorisdrid3000@gmail.com">lorisdrid3000@gmail.com</a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/loris-drid/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </section>
+
+</main>
+{% endblock content %}

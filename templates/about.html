@@ -1,101 +1,96 @@
 {% import "macros.html" as macros %}
-{% extends "index.html" %}
-{% block main %}
+{% extends "base.html" %}
+
+{% block content %}
 {% for asset in page.assets %}
 {% if asset is ending_with("data.toml") %}
 {% set_global data = load_data(path=asset, format="toml") %}
 {% endif %}
 {% endfor %}
 
-<h1 class="mb-16" data-i18n-en="About Me" data-i18n-fr="À propos" data-i18n-switch>{{ page.title }}</h1>
+<main class="cv">
 
-<h2 data-i18n="about.experience">💻 Experience</h2>
-{% for experience in data.experience %}
-<div class="experience-card">
-  <div class="card-header">
-    <h3 class="card-title" data-i18n-en="{{ experience.name }}" data-i18n-fr="{{ experience.name_fr | default(value=experience.name) }}" data-i18n-switch>{{ experience.name }}</h3>
-    <span class="card-date">{{ experience.start_date }}{% if experience.end_date %} – {{ experience.end_date }}{% endif %}</span>
+  <div class="page-head">
+    <p class="page-eyeline" data-i18n-switch data-i18n-en="// About me" data-i18n-fr="// À propos">// About me</p>
+    <h1 class="page-title" data-i18n-switch data-i18n-en="About me" data-i18n-fr="À propos">{{ page.title }}</h1>
   </div>
 
-  <p class="card-desc" data-i18n-en="{{ experience.desc }}" data-i18n-fr="{{ experience.desc_fr | default(value=experience.desc) }}" data-i18n-switch>{{ experience.desc }}</p>
-
-  {% if experience.tags %}
-  <div class="card-tags">
-    {% for tag in experience.tags %}
-    <span class="card-tag">{{ tag }}</span>
+  <!-- Experience -->
+  <section class="cv-section">
+    <h2 class="cv-section-title" data-i18n-switch data-i18n-en="Experience" data-i18n-fr="Expérience">Experience</h2>
+    {% for experience in data.experience %}
+    <div class="cv-entry">
+      <div class="cv-date">{{ experience.start_date }}{% if experience.end_date %} — {{ experience.end_date }}{% endif %}</div>
+      <div class="cv-entry-body">
+        <div class="cv-entry-head">
+          <div>
+            <h3 class="cv-role" data-i18n-switch data-i18n-en="{{ experience.name }}" data-i18n-fr="{{ experience.name_fr | default(value=experience.name) }}">{{ experience.name }}</h3>
+            <p class="cv-org" data-i18n-switch data-i18n-en="{{ experience.location }}" data-i18n-fr="{{ experience.location_fr | default(value=experience.location) }}">{{ experience.location }}</p>
+          </div>
+          {% if experience.logo %}
+          <a href="{{ experience.links[0].url }}" target="_blank" rel="noopener"><img src="{{ experience.logo }}" alt="{{ experience.name }} logo" class="cv-logo" /></a>
+          {% endif %}
+        </div>
+        <p class="cv-desc" data-i18n-switch data-i18n-en="{{ experience.desc }}" data-i18n-fr="{{ experience.desc_fr | default(value=experience.desc) }}">{{ experience.desc }}</p>
+        {% if experience.tags %}<p class="cv-tags">{{ experience.tags | join(sep="  ·  ") }}</p>{% endif %}
+      </div>
+    </div>
     {% endfor %}
-  </div>
-  {% endif %}
+  </section>
 
-  <div class="card-footer">
-    <span class="card-location" data-i18n-en="{{ experience.location }}" data-i18n-fr="{{ experience.location_fr | default(value=experience.location) }}" data-i18n-switch>{{ experience.location }}</span>
-    {% if experience.logo %}
-    <a href="{{ experience.links[0].url }}" target="_blank" rel="noopener">
-      <img src="{{ experience.logo }}" alt="{{ experience.name }} logo" class="card-logo" style="position: static;" />
-    </a>
-    {% endif %}
-  </div>
-</div>
-{% endfor %}
-
-<h2 data-i18n="about.education">🎓 Education</h2>
-{% for education in data.education %}
-<div class="experience-card">
-  <div class="card-header">
-    <h3 class="card-title" data-i18n-en="{{ education.name }}" data-i18n-fr="{{ education.name_fr | default(value=education.name) }}" data-i18n-switch>{{ education.name }}</h3>
-    <span class="card-date">{{ education.start_date }}{% if education.end_date %} – {{ education.end_date }}{% endif %}</span>
-  </div>
-
-  <p class="card-desc" data-i18n-en="{{ education.desc }}" data-i18n-fr="{{ education.desc_fr | default(value=education.desc) }}" data-i18n-switch>{{ education.desc }}</p>
-
-  {% if education.tags %}
-  <div class="card-tags">
-    {% for tag in education.tags %}
-    <span class="card-tag">{{ tag }}</span>
+  <!-- Education -->
+  <section class="cv-section">
+    <h2 class="cv-section-title" data-i18n-switch data-i18n-en="Education" data-i18n-fr="Formation">Education</h2>
+    {% for education in data.education %}
+    <div class="cv-entry">
+      <div class="cv-date">{{ education.start_date }}{% if education.end_date %} — {{ education.end_date }}{% endif %}</div>
+      <div class="cv-entry-body">
+        <div class="cv-entry-head">
+          <div>
+            <h3 class="cv-role" data-i18n-switch data-i18n-en="{{ education.name }}" data-i18n-fr="{{ education.name_fr | default(value=education.name) }}">{{ education.name }}</h3>
+            <p class="cv-org">{{ education.location }}</p>
+          </div>
+          {% if education.logo %}
+          <a href="{{ education.links[0].url }}" target="_blank" rel="noopener"><img src="{{ education.logo }}" alt="{{ education.name }} logo" class="cv-logo" /></a>
+          {% endif %}
+        </div>
+        <p class="cv-desc" data-i18n-switch data-i18n-en="{{ education.desc }}" data-i18n-fr="{{ education.desc_fr | default(value=education.desc) }}">{{ education.desc }}</p>
+        {% if education.tags %}<p class="cv-tags">{{ education.tags | join(sep="  ·  ") }}</p>{% endif %}
+      </div>
+    </div>
     {% endfor %}
-  </div>
-  {% endif %}
+  </section>
 
-  <div class="card-footer">
-    <span class="card-location">{{ education.location }}</span>
-    {% if education.logo %}
-    <a href="{{ education.links[0].url }}" target="_blank" rel="noopener">
-      <img src="{{ education.logo }}" alt="{{ education.name }} logo" class="card-logo" style="position: static;" />
-    </a>
-    {% endif %}
-  </div>
-</div>
-{% endfor %}
+  <!-- Skills -->
+  <section class="cv-section">
+    <h2 class="cv-section-title" data-i18n-switch data-i18n-en="Skills" data-i18n-fr="Compétences">Skills</h2>
+    {% for group in data.skills %}
+    <div class="cv-skill-group">
+      <p class="cv-skill-label">{{ group.title }}</p>
+      <div class="cv-skill-items">
+        {% for skill in group.items %}
+        <a href="{{ skill.url }}" target="_blank" rel="noopener" class="cv-skill">{{ skill.name }}</a>
+        {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+  </section>
 
-<h2 data-i18n="about.skills">🛠 Skills</h2>
-<div class="not-prose mt-6 flex flex-col">
-  {% for group in data.skills %}
-  <div class="skills-category">
-    <h3>{{ group.title }}</h3>
-    <div class="skills-grid">
-      {% for skill in group.items %}
-        <a href="{{ skill.url }}" target="_blank" rel="noopener" class="skill-item">
-          {{ skill.name }}
-        </a>
+  <!-- Languages -->
+  <section class="cv-section">
+    <h2 class="cv-section-title" data-i18n-switch data-i18n-en="Languages" data-i18n-fr="Langues">Languages</h2>
+    <div class="cv-langs">
+      {% for lang in data.Languages %}
+      <div class="cv-lang">
+        {% if lang.flag %}<img src="{{ lang.flag }}" alt="{{ lang.name }} flag" />{% endif %}
+        <div>
+          <div class="cv-lang-name" data-i18n-switch data-i18n-en="{{ lang.name }}" data-i18n-fr="{{ lang.name_fr | default(value=lang.name) }}">{{ lang.name }}</div>
+          <div class="cv-lang-level" data-i18n-switch data-i18n-en="{{ lang.level }}" data-i18n-fr="{{ lang.level_fr | default(value=lang.level) }}">{{ lang.level }}</div>
+        </div>
+      </div>
       {% endfor %}
     </div>
-  </div>
-  {% endfor %}
-</div>
+  </section>
 
-<h2 data-i18n="about.languages">🌍 Languages</h2>
-<div class="not-prose mt-6 flex flex-wrap gap-4">
-  {% for lang in data.Languages %}
-  <div class="experience-card" style="text-align: center; flex: 1; min-width: 180px;">
-    {% if lang.flag %}
-    <div style="display: flex; justify-content: center; margin-bottom: 0.75rem;">
-      <img src="{{ lang.flag }}" alt="{{ lang.name }} flag" class="lang-flag" />
-    </div>
-    {% endif %}
-    <h3 class="card-title" style="font-size: 1.1rem;" data-i18n-en="{{ lang.name }}" data-i18n-fr="{{ lang.name_fr | default(value=lang.name) }}" data-i18n-switch>{{ lang.name }}</h3>
-    <p class="card-desc" style="color: var(--text-secondary); font-size: 0.9rem; margin: 0.25rem 0 0 0;" data-i18n-en="{{ lang.level }}" data-i18n-fr="{{ lang.level_fr | default(value=lang.level) }}" data-i18n-switch>{{ lang.level }}</p>
-  </div>
-  {% endfor %}
-</div>
-
-{% endblock %}
+</main>
+{% endblock content %}
