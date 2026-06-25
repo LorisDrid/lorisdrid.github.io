@@ -1,11 +1,11 @@
 {
   "profile": {
     "name": "Hi! I'm Loris",
-    "bio": "Software Engineer · UI/UX Enthusiast 🚀 Polytech Nice Sophia Graduate. Passionate about crafting intuitive user experiences and building full-stack applications."
+    "bio": "Software Engineer focused on AI integration. Polytech Nice Sophia graduate, building full-stack web apps and embedding AI features that ship."
   },
   "nav": {
-    "projects": "📂 Projects",
-    "about": "ℹ️ About Me"
+    "projects": "Projects",
+    "about": "About Me"
   },
   "home": {
     "what_i_do": "🚀 What I Do",
@@ -26,9 +26,9 @@
     "fluent": "Fluent"
   },
   "portfolio": {
-    "preview": "📸 Preview",
-    "technologies": "🛠️ Technologies",
-    "github_repo": "💻 GitHub Repository"
+    "preview": "Preview",
+    "technologies": "Technologies",
+    "github_repo": "GitHub Repository"
   },
   "footer": {
     "powered_by": "Powered by"

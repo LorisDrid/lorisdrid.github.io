@@ -21,8 +21,8 @@
 .switch {
   position: relative;
   display: inline-block;
-  width: 60px;
-  height: 30px;
+  width: 52px;
+  height: 28px;
 }
 
 .switch input {
@@ -46,9 +46,9 @@
 .slider:before {
   position: absolute;
   content: "";
-  height: 22px;
-  width: 22px;
-  left: 6px;
+  height: 20px;
+  width: 20px;
+  left: 5px;
   bottom: 4px;
   transition: 0.4s;
   background-image: url('/icons/theme.svg');
@@ -68,116 +68,111 @@ input:checked + .slider {
 }
 
 input:checked + .slider:before {
-  transform: translateX(26px);
+  transform: translateX(24px);
   background-position: right center;
   filter: invert(1);
 }
 </style>
 
 <header
-  class="{% if config.extra.style.header_blur %}blur-header{% else %}header{% endif %} fixed top-0 z-40 mx-auto min-h-[3.5rem] w-full"
+  class="{% if config.extra.style.header_blur %}blur-header{% else %}header{% endif %} site-header fixed top-0 z-40 w-full"
 >
-  <div class="mx-auto w-full max-w-5xl p-3 flex items-center justify-center relative">
+  <div class="site-header-inner">
 
-      <!-- Center: Name + Nav -->
-      <div class="flex items-center gap-10">
-        <a style="display: block; margin-top: -6px; margin-right: 2rem;" class="title-hover text-2xl font-semibold" href="{{ get_url(path=``) }}">{{ config.title }}</a>
-        {% if config.extra.menu %}
-        <nav class="hidden lg:flex items-center">
-          <ul class="flex flex-row">
-            {% for menu in config.extra.menu %}
-            {% set i18n_key = "" %}
-            {% if loop.index == 1 %}{% set i18n_key = "nav.projects" %}{% endif %}
-            {% if loop.index == 2 %}{% set i18n_key = "nav.about" %}{% endif %}
-            <li>
-              <a
-                class="primary-link block text-lg font-medium px-5 py-3"
-                href="{{ menu.url | replace(from=`$BASE_URL`, to=config.base_url) | safe }}"
-                {% if i18n_key %}data-i18n="{{ i18n_key }}"{% endif %}
-              >{{ menu.name }}</a>
-            </li>
-            {% endfor %}
-          </ul>
-        </nav>
-        {% endif %}
-      </div>
-
-      <!-- Right: mobile menu btn + toggle (absolute right) -->
-      <div style="position: fixed; right: 1.5rem; top: 0.75rem; z-index: 50;" class="flex items-center gap-3">
-        {% if config.extra.menu %}
-        <div class="flex relative justify-center gap-2.5 lg:hidden items-end">
-          <a class="text-1xl font-semibold">Menu</a>
-          <div
-            class="btn-menu flex relative justify-center flex-col z-50 gap-2.5 cursor-pointer h-8 w-8 shrink-0 items-center"
-            role="button"
-            aria-label="Menu"
-          ></div>
-        </div>
-        {% endif %}
-        <div style="display: flex; gap: 4px; margin-right: 12px;" id="lang-switcher">
-          <button onclick="switchLang('en')" id="lang-en" style="cursor: pointer; border: 2px solid transparent; border-radius: 3px; padding: 1px; background: none; transition: border-color 0.15s ease;">
-            <img src="https://flagcdn.com/w40/gb.png" alt="English" style="width: 28px; height: 18px; display: block; border-radius: 2px;" />
-          </button>
-          <button onclick="switchLang('fr')" id="lang-fr" style="cursor: pointer; border: 2px solid transparent; border-radius: 3px; padding: 1px; background: none; transition: border-color 0.15s ease;">
-            <img src="https://flagcdn.com/w40/fr.png" alt="Français" style="width: 28px; height: 18px; display: block; border-radius: 2px;" />
-          </button>
-        </div>
-        <label class="switch btn-dark h-6 w-6" aria-label="Theme toggle">
-          <input type="checkbox" id="theme-toggle" />
-          <span class="slider round"></span>
-        </label>
-      </div>
+    <!-- Left: logo + desktop nav -->
+    <div class="site-header-left">
+      <a class="title-hover site-logo" href="{{ get_url(path=``) }}">{{ config.title }}</a>
+      {% if config.extra.menu %}
+      <nav class="site-nav-desktop">
+        {% for menu in config.extra.menu %}
+        {% set i18n_key = "" %}
+        {% if loop.index == 1 %}{% set i18n_key = "nav.projects" %}{% endif %}
+        {% if loop.index == 2 %}{% set i18n_key = "nav.about" %}{% endif %}
+        <a
+          class="primary-link site-nav-link"
+          href="{{ menu.url | replace(from=`$BASE_URL`, to=config.base_url) | safe }}"
+          {% if i18n_key %}data-i18n="{{ i18n_key }}"{% endif %}
+        >{{ menu.name }}</a>
+        {% endfor %}
+      </nav>
+      {% endif %}
     </div>
 
-    <script>
-      const htmlClass = document.documentElement.classList;
-      const darkScheme = window.matchMedia("(prefers-color-scheme: dark)");
-      const themeToggle = document.getElementById("theme-toggle");
+    <!-- Right: language, theme, mobile burger -->
+    <div class="site-header-right">
+      <div style="display: flex; gap: 4px;" id="lang-switcher">
+        <button onclick="switchLang('en')" id="lang-en" style="cursor: pointer; border: 2px solid transparent; border-radius: 3px; padding: 1px; background: none; transition: border-color 0.15s ease; line-height: 0;">
+          <img src="https://flagcdn.com/w40/gb.png" alt="English" style="width: 26px; height: 17px; display: block; border-radius: 2px;" />
+        </button>
+        <button onclick="switchLang('fr')" id="lang-fr" style="cursor: pointer; border: 2px solid transparent; border-radius: 3px; padding: 1px; background: none; transition: border-color 0.15s ease; line-height: 0;">
+          <img src="https://flagcdn.com/w40/fr.png" alt="Français" style="width: 26px; height: 17px; display: block; border-radius: 2px;" />
+        </button>
+      </div>
 
-      const setDark = (isDark) => {
-        if (isDark) {
-          htmlClass.add("dark");
-          document.body.dispatchEvent(new CustomEvent("set-theme", { detail: "dark" }));
-        } else {
-          htmlClass.remove("dark");
-          document.body.dispatchEvent(new CustomEvent("set-theme", { detail: "light" }));
-        }
-        localStorage.setItem("dark", isDark);
-        themeToggle.checked = isDark;
-      };
+      <label class="switch" aria-label="Theme toggle">
+        <input type="checkbox" id="theme-toggle" />
+        <span class="slider round"></span>
+      </label>
 
-      setTimeout(() => htmlClass.remove("not-ready"), 10);
-      const stored = localStorage.getItem("dark");
-      const prefersDark = stored ? stored === "true" : darkScheme.matches;
-      setDark(prefersDark);
-
-      darkScheme.addEventListener("change", (e) => {
-        const stored = localStorage.getItem("dark");
-        if (stored === null) setDark(e.matches);
-      });
-
-      themeToggle.addEventListener("change", () => {
-        setDark(themeToggle.checked);
-      });
-
-      const btnMenu = document.querySelector(".btn-menu");
-      btnMenu?.addEventListener("click", () => htmlClass.toggle("open"));
-    </script>
-
-    <!-- Mobile nav (hidden by default, shown when .open is on html) -->
-    {% if config.extra.menu %}
-    <nav class="lg:hidden">
-      <ul class="nav-wrapper flex w-full flex-col py-2">
-        {% for menu in config.extra.menu %}
-        <li>
-          <a
-            class="primary-link block py-3 text-center text-lg font-medium"
-            href="{{ menu.url | replace(from=`$BASE_URL`, to=config.base_url) | safe }}"
-          >{{ menu.name }}</a>
-        </li>
-        {% endfor %}
-      </ul>
-    </nav>
-    {% endif %}
+      {% if config.extra.menu %}
+      <button class="btn-menu site-menu-toggle" type="button" aria-label="Menu"></button>
+      {% endif %}
+    </div>
   </div>
+
+  <!-- Mobile dropdown nav (shown when .open is on <html>) -->
+  {% if config.extra.menu %}
+  <nav class="site-nav-mobile">
+    {% for menu in config.extra.menu %}
+    {% set i18n_key = "" %}
+    {% if loop.index == 1 %}{% set i18n_key = "nav.projects" %}{% endif %}
+    {% if loop.index == 2 %}{% set i18n_key = "nav.about" %}{% endif %}
+    <a
+      class="primary-link"
+      href="{{ menu.url | replace(from=`$BASE_URL`, to=config.base_url) | safe }}"
+      {% if i18n_key %}data-i18n="{{ i18n_key }}"{% endif %}
+    >{{ menu.name }}</a>
+    {% endfor %}
+  </nav>
+  {% endif %}
+
+  <script>
+    const htmlClass = document.documentElement.classList;
+    const darkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+    const themeToggle = document.getElementById("theme-toggle");
+
+    const setDark = (isDark) => {
+      if (isDark) {
+        htmlClass.add("dark");
+        document.body.dispatchEvent(new CustomEvent("set-theme", { detail: "dark" }));
+      } else {
+        htmlClass.remove("dark");
+        document.body.dispatchEvent(new CustomEvent("set-theme", { detail: "light" }));
+      }
+      localStorage.setItem("dark", isDark);
+      themeToggle.checked = isDark;
+    };
+
+    setTimeout(() => htmlClass.remove("not-ready"), 10);
+    const stored = localStorage.getItem("dark");
+    const prefersDark = stored ? stored === "true" : darkScheme.matches;
+    setDark(prefersDark);
+
+    darkScheme.addEventListener("change", (e) => {
+      const stored = localStorage.getItem("dark");
+      if (stored === null) setDark(e.matches);
+    });
+
+    themeToggle.addEventListener("change", () => {
+      setDark(themeToggle.checked);
+    });
+
+    const btnMenu = document.querySelector(".btn-menu");
+    btnMenu?.addEventListener("click", () => htmlClass.toggle("open"));
+
+    // Close the mobile menu after navigating
+    document.querySelectorAll(".site-nav-mobile a").forEach((a) =>
+      a.addEventListener("click", () => htmlClass.remove("open"))
+    );
+  </script>
 </header>

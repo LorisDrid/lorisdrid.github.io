@@ -1,11 +1,11 @@
 {
   "profile": {
     "name": "Salut ! Moi c'est Loris",
-    "bio": "Ingénieur Logiciel · Passionné UI/UX 🚀 Diplômé Polytech Nice Sophia. Passionné par la conception d'expériences utilisateur intuitives et le développement full-stack."
+    "bio": "Ingénieur logiciel orienté intégration IA. Diplômé Polytech Nice Sophia, je développe des applications web full-stack et j'y intègre des fonctionnalités IA."
   },
   "nav": {
-    "projects": "📂 Projets",
-    "about": "ℹ️ À propos"
+    "projects": "Projets",
+    "about": "À propos"
   },
   "home": {
     "what_i_do": "🚀 Ce que je fais",
@@ -26,9 +26,9 @@
     "fluent": "Courant"
   },
   "portfolio": {
-    "preview": "📸 Aperçu",
-    "technologies": "🛠️ Technologies",
-    "github_repo": "💻 Dépôt GitHub"
+    "preview": "Aperçu",
+    "technologies": "Technologies",
+    "github_repo": "Dépôt GitHub"
   },
   "footer": {
     "powered_by": "Propulsé par"

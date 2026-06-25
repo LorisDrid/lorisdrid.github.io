@@ -90,8 +90,8 @@
     {% include "partials/mermaid.html" %}
   {% endif %}
 
-  <link rel="icon" href="{{ get_url(path='favicon.ico') }}" />
-  <link rel="apple-touch-icon" href="{{ get_url(path='apple-touch-icon.png') }}" />
+  <link rel="icon" type="image/svg+xml" href="{{ get_url(path='favicon.svg') }}" />
+  <link rel="apple-touch-icon" href="{{ get_url(path='icons/avatar.png') }}" />
 
   {% if config.generate_feed %}
     {% if "atom.xml" in config.feed_filenames %}

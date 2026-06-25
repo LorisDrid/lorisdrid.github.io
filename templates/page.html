@@ -1,44 +1,40 @@
-{% extends "base.html" %}<!---->
-{% block main %}
-<article>
-  <header class="mb-8">
-    <h1 class="my-0! pb-2.5" data-i18n-switch data-i18n-en="{{ page.title }}" data-i18n-fr="{{ page.extra.title_fr | default(value=page.title) }}">{{ page.title }}</h1>
-    {% include "partials/page_info.html" %}
-  </header>
+{% extends "base.html" %}
+
+{% block content %}
+<main class="project">
+
+  <a class="project-back" href="{{ get_url(path='portfolio') }}" data-i18n-switch data-i18n-en="← All projects" data-i18n-fr="← Tous les projets">← All projects</a>
+
+  <div class="page-head">
+    {% if page.taxonomies.tags %}
+    <p class="page-eyeline">// {{ page.taxonomies.tags.0 }}</p>
+    {% endif %}
+    <h1 class="page-title" data-i18n-switch data-i18n-en="{{ page.title }}" data-i18n-fr="{{ page.extra.title_fr | default(value=page.title) }}">{{ page.title }}</h1>
+    <div class="project-meta">
+      {% if page.date %}<time>{{ page.date | date(format="%b %Y") }}</time>{% endif %}
+      {% if page.extra.github_url %}<span class="project-meta-sep">·</span><a href="{{ page.extra.github_url }}" target="_blank" rel="noopener">GitHub&nbsp;↗</a>{% endif %}
+    </div>
+  </div>
 
   {% if page.extra.cover.image and page.extra.cover.show_in_page | default(value=true) %}
-  <figure class="mt-0 mb-12">
-    <img
-      class="h-auto w-full rounded-lg"
-      src="{{ get_url(path=page.extra.cover.image) }}"
-      alt="{{ page.extra.cover.alt | default(value='cover') }}"
-    />
+  <figure class="project-cover">
+    <img src="{{ get_url(path=page.extra.cover.image) }}" alt="{{ page.extra.cover.alt | default(value='cover') }}" />
   </figure>
   {% endif %}
 
-  {# --- If structured i18n content exists, render it; otherwise fallback to markdown body --- #}
   {% if page.extra.body_en %}
-  <section>
+  <div class="project-body">
     <p data-i18n-switch data-i18n-en="{{ page.extra.body_en }}" data-i18n-fr="{{ page.extra.body_fr | default(value=page.extra.body_en) }}">{{ page.extra.body_en }}</p>
 
     {% if page.extra.body_image %}
-    <figure class="mt-6 mb-8">
-      <img
-        class="h-auto w-full rounded-lg"
-        src="{{ get_url(path=page.extra.body_image) }}"
-        alt="{{ page.extra.body_image_alt | default(value='') }}"
-      />
+    <figure class="project-shot">
+      <img src="{{ get_url(path=page.extra.body_image) }}" alt="{{ page.extra.body_image_alt | default(value='') }}" />
     </figure>
     {% endif %}
 
-    {% if page.extra.github_url %}
-    <h2 data-i18n="portfolio.github_repo">💻 GitHub Repository</h2>
-    <a href="{{ page.extra.github_url }}" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 0.5rem; background: var(--card-bg, #24243a); border: 1px solid var(--card-border, #333350); padding: 0.5rem 1rem; border-radius: 0.5rem; text-decoration: none; font-weight: 500; transition: border-color 0.15s ease;">{{ page.extra.github_label | default(value="GitHub") }}</a>
-    {% endif %}
-
     {% if page.extra.techs %}
-    <h2 data-i18n="portfolio.technologies">🛠️ Technologies</h2>
-    <ul data-i18n-techs>
+    <h2 class="project-h2" data-i18n="portfolio.technologies">Technologies</h2>
+    <ul class="project-techs" data-i18n-techs>
       {% for tech in page.extra.techs %}
       <li data-i18n-switch
           data-i18n-en="{{ tech }}"
@@ -48,13 +44,23 @@
       {% endfor %}
     </ul>
     {% endif %}
-  </section>
+
+    {% if page.extra.github_url %}
+    <h2 class="project-h2" data-i18n="portfolio.github_repo">GitHub Repository</h2>
+    <a class="project-link" href="{{ page.extra.github_url }}" target="_blank" rel="noopener">{{ page.extra.github_label | default(value="GitHub") }}</a>
+    {% endif %}
+  </div>
   {% else %}
-  <section>{{ page.content | safe }}</section>
+  <div class="project-body prose prose-neutral dark:prose-invert">{{ page.content | safe }}</div>
   {% endif %}
 
-  <hr />
+  {% if page.taxonomies.tags %}
+  <div class="project-tags">
+    {% for tag in page.taxonomies.tags %}
+    <a href="{{ get_taxonomy_url(kind='tags', name=tag) | safe }}">{{ tag }}</a>
+    {% endfor %}
+  </div>
+  {% endif %}
 
-  {% include "partials/post_taxonomies.html" %}
-</article>
-{% endblock main %}
+</main>
+{% endblock content %}

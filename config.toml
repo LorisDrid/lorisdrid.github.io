@@ -33,6 +33,8 @@ math = false
 mermaid = false
 # Enable comment support globally.
 comment = false
+# Default Open Graph / social share image (used on pages without their own cover).
+social_image = "icons/avatar.png"
 
 [extra.style]
 # Custom colors — indigo accent. Dark: neutral slate base, elevated cards.
@@ -45,7 +47,7 @@ header_blur = false
 # The profile on home page.
 [extra.profile]
 name = "Hi! I'm Loris"
-bio = "Software Engineer · UI/UX Enthusiast 🚀 Polytech Nice Sophia Graduate. Passionate about crafting intuitive user experiences and building full-stack applications."
+bio = "Software Engineer focused on AI integration. Polytech Nice Sophia graduate, building full-stack web apps and embedding AI features that ship."
 # The URL of avatar — TODO: remplace par ton avatar
 avatar_url = "icons/avatar.png"
 # Invert color in dark mode.
@@ -67,11 +69,11 @@ url = "mailto:lorisdrid3000@gmail.com"
 
 # The top menu.
 [[extra.menu]]
-name = "📂 Projects"
+name = "Projects"
 url = "$BASE_URL/portfolio"
 
 [[extra.menu]]
-name = "ℹ️ About Me"
+name = "About Me"
 url = "$BASE_URL/about"
 
 # The page footer options.
