@@ -1,0 +1,36 @@
+{
+  "profile": {
+    "name": "Salut ! Moi c'est Loris",
+    "bio": "Ingénieur logiciel orienté intégration IA. Diplômé Polytech Nice Sophia, je développe des applications web full-stack et j'y intègre des fonctionnalités IA."
+  },
+  "nav": {
+    "projects": "Projets",
+    "about": "À propos"
+  },
+  "home": {
+    "what_i_do": "🚀 Ce que je fais",
+    "uiux_title": "Design UI/UX",
+    "uiux_desc": "Conception d'interfaces intuitives avec Figma, prototypage et recherche utilisateur.",
+    "fullstack_title": "Développement Full-Stack",
+    "fullstack_desc": "Création d'applications web avec React, Spring Boot, Node.js et des frameworks modernes.",
+    "data_title": "Données & Visualisation",
+    "data_desc": "Transformer des données complexes en visualisations claires et interactives avec D3.js et Python.",
+    "download_cv": "📄 Télécharger mon CV"
+  },
+  "about": {
+    "experience": "💻 Expérience",
+    "education": "🎓 Formation",
+    "skills": "🛠️ Compétences",
+    "languages": "🌍 Langues",
+    "native": "Natif",
+    "fluent": "Courant"
+  },
+  "portfolio": {
+    "preview": "Aperçu",
+    "technologies": "Technologies",
+    "github_repo": "Dépôt GitHub"
+  },
+  "footer": {
+    "powered_by": "Propulsé par"
+  }
+}

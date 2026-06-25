@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="Gamble Together — casino mini-games">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="38%" r="75%">
+      <stop offset="0%" stop-color="#241012"/>
+      <stop offset="55%" stop-color="#120a0c"/>
+      <stop offset="100%" stop-color="#0b0809"/>
+    </radialGradient>
+    <filter id="sh" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg)"/>
+
+  <!-- felt ring accent -->
+  <circle cx="400" cy="205" r="150" fill="none" stroke="#c0392f" stroke-opacity="0.18" stroke-width="2"/>
+
+  <!-- fanned playing cards -->
+  <g filter="url(#sh)">
+    <!-- left card: A spades (black) -->
+    <g transform="rotate(-14 400 210)">
+      <rect x="300" y="120" width="120" height="170" rx="12" fill="#f4f1ea"/>
+      <text x="316" y="150" font-family="Georgia, 'Times New Roman', serif" font-size="26" font-weight="700" fill="#16181d">A</text>
+      <text x="360" y="225" font-family="Georgia, serif" font-size="64" fill="#16181d" text-anchor="middle">&#9824;</text>
+    </g>
+    <!-- right card: K clubs (black) -->
+    <g transform="rotate(14 400 210)">
+      <rect x="380" y="120" width="120" height="170" rx="12" fill="#f4f1ea"/>
+      <text x="396" y="150" font-family="Georgia, serif" font-size="26" font-weight="700" fill="#16181d">K</text>
+      <text x="440" y="225" font-family="Georgia, serif" font-size="64" fill="#16181d" text-anchor="middle">&#9827;</text>
+    </g>
+    <!-- center card: A hearts (red) -->
+    <g transform="rotate(0 400 205)">
+      <rect x="342" y="95" width="120" height="172" rx="12" fill="#fbfaf6"/>
+      <text x="358" y="126" font-family="Georgia, serif" font-size="26" font-weight="700" fill="#c0392f">A</text>
+      <text x="402" y="202" font-family="Georgia, serif" font-size="66" fill="#c0392f" text-anchor="middle">&#9829;</text>
+    </g>
+  </g>
+
+  <!-- poker chip -->
+  <g filter="url(#sh)" transform="translate(258 268)">
+    <circle r="40" fill="#c0392f"/>
+    <circle r="40" fill="none" stroke="#f4f1ea" stroke-width="3" stroke-dasharray="9 11"/>
+    <circle r="25" fill="none" stroke="#f4f1ea" stroke-width="3"/>
+  </g>
+
+  <!-- title -->
+  <text x="400" y="385" font-family="'Space Grotesk', 'Segoe UI', Arial, sans-serif" font-size="46" font-weight="700" letter-spacing="1" text-anchor="middle" fill="#f4f1ea">Gamble <tspan fill="#e0483b">Together</tspan></text>
+  <text x="400" y="425" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="17" letter-spacing="2" text-anchor="middle" fill="#9a8f8c">FICTIONAL CHIPS · PLAY WITH FRIENDS</text>
+</svg>
